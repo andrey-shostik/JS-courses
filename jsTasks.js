@@ -76,3 +76,4 @@ function fibFunction(quantity) {
     return arrFibonacci;
 }
 console.log(fibFunction(10));
+
