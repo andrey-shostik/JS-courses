@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d525cbd-6ba1-41e7-a09b-418122c56376" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/scripts/lesson-1.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -130,12 +128,12 @@
       <option name="presentableId" value="Default" />
       <updated>1522738020778</updated>
       <workItem from="1522738022505" duration="640000" />
-      <workItem from="1522739081815" duration="10097000" />
+      <workItem from="1522739081815" duration="10553000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10737000" />
+    <option name="totallyTimeSpent" value="11193000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="-4" width="1311" height="772" extended-state="6" />
