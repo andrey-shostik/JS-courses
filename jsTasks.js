@@ -65,3 +65,12 @@ console.log( arr.filter( uniqueVal) );
 
 // реализовать функцию которая возвращает массив с числами фибоначчи, 
 // количество которых зависит от переданного значения при вызове функции
+
+var arrFibonacci = [0, 1];
+function fibonacci(quantity) {
+    for (var i = 0; i < quantity; i++) {
+        arrFibonacci[i + 2] = arrFibonacci[i] + arrFibonacci[i + 1];
+    }
+    return arrFibonacci;
+}
+console.log(fibonacci(10));
