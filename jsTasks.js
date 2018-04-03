@@ -43,16 +43,19 @@ console.log(arr);
 
 // b) цикл for:
 
-var arr = [ 4, 1, 45, 6, 37, 554, 2];
-for (a = 0; a < arr.length; a++) {
-    for (b = 0; b < arr.length; b++) {
-        if (arr [a] < arr [b]) {
-            var num = arr [a];
-                arr [a] = arr [b];
-                arr [b] = num;
-        } 
-    }
-}   
+function sortFunction(arr) {
+    var arr = [4, 1, 45, 6, 37, 554, 2];
+    for (a = 0; a < arr.length; a++) {
+        for (b = 0; b < arr.length; b++) {
+            if (arr[a] < arr[b]) {
+                var num = arr[a];
+                arr[a] = arr[b];
+                arr[b] = num;
+            }
+        }
+    }   
+}
+
 console.log(arr);
 
 // реализовать функцию которая возвращает массив с уникальными элементами // [1,1,2,3,1,2] => [1,2,3]
