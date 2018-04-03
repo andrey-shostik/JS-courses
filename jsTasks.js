@@ -1,6 +1,6 @@
 // реализовать функцию которая вернет сумму элементов произвольного массива
 
-var arr = [1, 10, 15, 25, 40];
+var arr = [ 1, 10, 15, 25, 40 ];
 function arraySum(array) {
     var sum = 0;
     for (var i = 0; i < array.length; i++) {
@@ -35,7 +35,7 @@ console.log(arr);
 
 // или
 
-var arr = [4, 1, 45, 6, 37, 554, 2];
+var arr = [ 4, 1, 45, 6, 37, 554, 2 ];
 arr.sort(function (a, b) {
     return a - b;
 });
@@ -44,7 +44,7 @@ console.log(arr);
 // b) цикл for:
 
 function sortFunction(arr) {
-    var arr = [4, 1, 45, 6, 37, 554, 2];
+    var arr = [ 4, 1, 45, 6, 37, 554, 2 ];
     for (a = 0; a < arr.length; a++) {
         for (b = 0; b < arr.length; b++) {
             if (arr[a] < arr[b]) {
@@ -55,25 +55,24 @@ function sortFunction(arr) {
         }
     }   
 }
-
 console.log(arr);
 
 // реализовать функцию которая возвращает массив с уникальными элементами // [1,1,2,3,1,2] => [1,2,3]
 
 var arr = [ 1, 1, 1, 2, 3, 1, 2, 4, 4, 10 ];
-function uniqueVal(value, index, self) { 
+function uniFunction(value, index, self) { 
     return self.indexOf(value) === index;
 }
-console.log( arr.filter( uniqueVal) );
+console.log(arr.filter(uniFunction));
 
 // реализовать функцию которая возвращает массив с числами фибоначчи, 
 // количество которых зависит от переданного значения при вызове функции
 
 var arrFibonacci = [0, 1];
-function fibonacci(quantity) {
+function fibFunction(quantity) {
     for (var i = 0; i < quantity; i++) {
         arrFibonacci[i + 2] = arrFibonacci[i] + arrFibonacci[i + 1];
     }
     return arrFibonacci;
 }
-console.log(fibonacci(10));
+console.log(fibFunction(10));
