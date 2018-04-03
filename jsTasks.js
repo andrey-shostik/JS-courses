@@ -1,6 +1,6 @@
 // реализовать функцию которая вернет сумму элементов произвольного массива
 
-var arr = [ 1, 10, 15, 25, 40 ];
+var arr = [1, 10, 15, 25, 40];
 
 function arraySum(array) {
     var sum = 0;
@@ -8,10 +8,10 @@ function arraySum(array) {
         sum += array[i];
     }
 
-    console.log(sum);
+    return sum
 }
 
-arraySum(arr);
+console.log(arraySum(arr));
 
 // реализовать функцию которая принимает произвольный массив и возвращает отсортированный по возростанию, сделать двумя способами, через метод sort и через цикл for
 
