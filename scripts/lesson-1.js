@@ -3,7 +3,6 @@
 var arr = [3, 1, 2, 5, 4, 1, 2];
 var lenghtArr = arr.length;
 var total = 0;
-var totalArr = [];
 var fibArr = [0, 1];
 
 function sum(arr) {
@@ -24,14 +23,17 @@ function firstSort(arr) {
 console.log(firstSort(arr));
 
 function secondSort(arr) {
-    for (var i = 0; i < lenghtArr; i++) {
-        if (arr[i] <= arr[i + 1]) {
-            totalArr.push(arr[i]);
+    for (var i = 0; i < lenghtArr +1 ; i++) {
+        for (var j = 0; j < lenghtArr; j++) {
+            if (arr[i] > arr[j + 1]) {
+            } else {
+                var temp = arr[i];
+                arr[i] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
         }
-        var temp = arr[i];
     }
-    totalArr.push(temp);
-    return totalArr;
+    return arr;
 }
 
 console.log(secondSort(arr));
@@ -41,9 +43,9 @@ console.log(secondSort(arr));
 function unicArr(arr) {
     for (var i = 0; i < lenghtArr; i++) {
         for (var j = 1; j < lenghtArr; j++) {
-            if (arr[i] === arr[i+j]) {
+            if (arr[i] === arr[i + j]) {
                 delete arr[i];
-                delete arr[i+j];
+                delete arr[i + j];
             }
         }
     }
@@ -56,7 +58,7 @@ console.log(unicArr(arr));
 
 function fibonachi(quantity) {
     for (var i = 0; i < quantity; i++) {
-       fibArr[i + 2] = fibArr[i] + fibArr[i+1];
+        fibArr[i + 2] = fibArr[i] + fibArr[i + 1];
     }
     return fibArr;
 }
