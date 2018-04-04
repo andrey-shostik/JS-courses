@@ -33,6 +33,10 @@ function secondSort(arr) {
             }
         }
     }
+    function n(value) {
+        return value != undefined;
+    }
+    arr = arr.filter(n);
     return arr;
 }
 
