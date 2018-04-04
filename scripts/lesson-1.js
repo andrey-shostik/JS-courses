@@ -1,6 +1,6 @@
 //1. реализовать функцию которая вернет сумму элементов произвольного массива
 
-var arr = [3, 1, 2, 5, 4, 1, 2];
+var arr = [3, 1, 2, 5, 4, 1, 2, 0, -1];
 var lenghtArr = arr.length;
 var total = 0;
 var fibArr = [0, 1];
@@ -49,6 +49,11 @@ function unicArr(arr) {
             }
         }
     }
+    
+    function n(value) {
+        return value != undefined;
+    }
+    arr = arr.filter(n);
     return arr;
 }
 
