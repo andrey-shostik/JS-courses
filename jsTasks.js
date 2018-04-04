@@ -15,21 +15,21 @@ console.log(arraySum(arr));
 
 // a) метод sort:
 
+var arr = [4, 1, 45, 6, 37, 554, 2];
 function sortFunction(a, b) {
     if (a > b) return 1;
     if (a < b) return -1;
     return 0;
 }
-var arr = [4, 1, 45, 6, 37, 554, 2];
 arr.sort(sortFunction);
 console.log(arr);
 
 // или
 
+var arr = [4, 1, 45, 6, 37, 554, 2];
 function sortFunction(a, b) {
     return a - b;
 }
-var arr = [4, 1, 45, 6, 37, 554, 2];
 arr.sort(sortFunction);
 console.log(arr);
 
@@ -43,7 +43,7 @@ console.log(arr);
 
 // b) цикл for:
 
-function sortFunction(arr) {
+function sortFunction() {
     var arr = [4, 1, 45, 6, 37, 554, 2];
     for (a = 0; a < arr.length; a++) {
         for (b = 0; b < arr.length; b++) {
@@ -54,16 +54,26 @@ function sortFunction(arr) {
             }
         }
     }
+    return arr
 }
 console.log(arr);
 
 // 3. Реализовать функцию которая возвращает массив с уникальными элементами // [1,1,2,3,1,2] => [1,2,3]
 
 var arr = [1, 1, 1, 2, 3, 1, 2, 4, 4, 10];
-function uniFunction(value, index, self) {
-    return self.indexOf(value) === index;
+function unique(arr) {
+    var result = [];
+    nextInput:
+    for (var i = 0; i < arr.length; i++) {
+        var str = arr[i];
+        for (var j = 0; j < result.length; j++) {
+            if (result[j] == str) continue nextInput;
+        }
+        result.push(str);
+    }
+    return result;
 }
-console.log(arr.filter(uniFunction));
+console.log(unique(arr));
 
 // 4. Реализовать функцию которая возвращает массив с числами фибоначчи, 
 // количество которых зависит от переданного значения при вызове функции
