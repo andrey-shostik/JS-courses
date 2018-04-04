@@ -7,6 +7,7 @@
 <body>
     <script>
         var arr = [10,30,25,-100]
+        alert("Массив " + arr)
         function arrsun() {
             var sum = 0
             for (var i = 0; i<arr.length; i++) {
@@ -14,7 +15,26 @@
             }
             return sum
         }
-        alert(arrsun())
+        alert("Сумма массива = " + arrsun())
+        function sort() {
+            var a = 0
+            a=arr.sort()
+            return a
+        }
+        alert("Сортировка " + sort())
+        function sortfor() {
+            var a = 0
+            for (var i = 0; i<arr.length; i++){
+                if (arr[i]<=arr[i+1]) {
+                    a.sort(arr[i])
+                }
+                    a = arr[i]
+
+               return a
+            }
+        }
+        alert (sortfox)
+
     </script>
 
 </body>
