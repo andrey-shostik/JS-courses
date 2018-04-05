@@ -47,7 +47,6 @@ function sortAscendingMethodFor(arr) {
 // реализовать функцию которая возвращает массив
 // с уникальными элементами // [1,1,2,3,1,2] => [1,2,3]
 
-
 function getArrWithUniqueValues(arr) {
     const objWithUniqueValues = {};
     const result = []; // или тут лучше arrWithUniqueValues ?
@@ -67,7 +66,6 @@ function getArrWithUniqueValues(arr) {
 // 3 *
 // реализовать функцию которая возвращает массив
 // с уникальными элементами // [1,1,2,3,1,2] => [1,2,3] используя Set
-
 
 function getArrWithUniqueValuesSet(arr) {
     let uniqueValues = new Set();
