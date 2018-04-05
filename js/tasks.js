@@ -9,11 +9,10 @@ const arrayWithNonUniqueValues = [1, 1, 2, 3, 1, 2];
 
 function getSum(arr) {
     let sum = 0;
+    const numericArr = addNumericArr(arr);
 
-    for (let i = 0; i < arr.length; i++) {
-        if (isNumeric(arr[i])) {
-            sum += arr[i];
-        }
+    for (let i = 0; i < numericArr.length; i++) {
+        sum += numericArr[i];
     }
 
     return sum;
@@ -105,9 +104,26 @@ console.group('Задача №4:');
 console.log('Фибоначчи:', fibonacciArr(12));
 console.groupEnd('Задача №4:');
 
+console.group('*');
+console.log('*', addNumericArr(randomArr));
+console.groupEnd('*');
+
 console.groupEnd('Вызовы:');
 
 // *********************************
+
+// * возвращаем массив только с числами
+function addNumericArr(arr) {
+    const numericArr = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        if (isNumeric(arr[i])) {
+            numericArr.push(arr[i]);
+        }
+    }
+
+    return numericArr;
+}
 
 function isNumeric(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
