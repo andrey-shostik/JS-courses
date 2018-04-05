@@ -1,6 +1,6 @@
 // Массивы
-const arr = [1, 3, 24, 5, 6, 34, 5, 4, "нежданчик", true, undefined];
-const notUnicArr = [1, 1, 2, 3, 1, 2];
+const randomArr = [1, 3, 24, 5, 6, 34, 5, 4, "нежданчик", true, undefined];
+const arrayWithNonUniqueValues = [1, 1, 2, 3, 1, 2];
 
 // ЗАДАЧИ **********************************
 
@@ -9,18 +9,12 @@ const notUnicArr = [1, 1, 2, 3, 1, 2];
 
 function getSum(arr) {
     let sum = 0;
-
-    console.group('Не числа');
-
+    
     for (let i = 0; i < arr.length; i++) {
         if (isNumeric(arr[i])) {
             sum += arr[i];
-        } else {
-            console.log(arr[i] + ' - не попадет в сумму');
         }
     }
-
-    console.groupEnd('Не числа');
 
     return sum;
 }
@@ -30,13 +24,13 @@ function getSum(arr) {
 // отсортированный по возростанию, сделать двумя способами, через метод sort и через цикл for
 
 // *** через метод sort
-function getSort(arr) {
+function sortAscending(arr) {
 
     return arr.sort(compareNumeric);
 }
 
 // *** через цикл for
-function getSortFor(arr) {
+function sortAscendingMethodFor(arr) {
     let n = arr.length;
 
     for (let i = 0; i < n - 1; i++) {
@@ -57,20 +51,20 @@ function getSortFor(arr) {
 // с уникальными элементами // [1,1,2,3,1,2] => [1,2,3]
 
 
-function getUnicArr(notUnicArr) {
-    let obj = {};
-    let unicArr = [];
+function getArrWithUniqueValues(arr) {
+    let objWithUniqueValues = {};
+    let result = []; // или тут лучше arrWithUniqueValues ?
 
-    for (let i = 0; i < notUnicArr.length; i++) {
-        let str = notUnicArr[i];
-        obj[str] = notUnicArr[i];
+    for (let i = 0; i < arr.length; i++) {
+        let str = arr[i];
+        objWithUniqueValues[str] = arr[i];
     }
 
-    for (var key in obj) {
-        unicArr.push(obj[key]);
+    for (let key in objWithUniqueValues) {
+        result.push(objWithUniqueValues[key]);
     }
 
-    return unicArr;
+    return result;
 }
 
 
@@ -93,16 +87,16 @@ function fibonacciArr(n) {
 console.group('Вызовы:');
 
 console.group('Задача №1:');
-console.log('Сумма:' + getSum(arr));
+console.log('Сумма:' + getSum(randomArr));
 console.groupEnd('Задача №1:');
 
 console.group('Задача №2:');
-console.log('Сортировка через Метод sort:', getSort(arr));
-console.log('Сортировка через Цикл for:', getSortFor(arr));
+console.log('Сортировка через Метод sort:', sortAscending(randomArr));
+console.log('Сортировка через Цикл for:', sortAscendingMethodFor(randomArr));
 console.groupEnd('Задача №2:');
 
 console.group('Задача №3:');
-console.log('Массив с уникальными элементами:', getUnicArr(notUnicArr));
+console.log('Массив с уникальными элементами:', getArrWithUniqueValues(arrayWithNonUniqueValues));
 console.groupEnd('Задача №3:');
 
 console.group('Задача №4:');
