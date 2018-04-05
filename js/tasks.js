@@ -9,7 +9,7 @@ const arrayWithNonUniqueValues = [1, 1, 2, 3, 1, 2];
 
 function getSum(arr) {
     let sum = 0;
-    
+
     for (let i = 0; i < arr.length; i++) {
         if (isNumeric(arr[i])) {
             sum += arr[i];
@@ -31,19 +31,17 @@ function sortAscending(arr) {
 
 // *** через цикл for
 function sortAscendingMethodFor(arr) {
-    let n = arr.length;
-
-    for (let i = 0; i < n - 1; i++) {
-        for (let j = 0; j < n - 1 - i; j++) {
+    for (let i = 0; i < arr.length - 1; i++) {
+        for (let j = 0; j < arr.length - 1 - i; j++) {
             if (arr[j + 1] < arr[j]) {
-                let t = arr[j + 1];
+                const t = arr[j + 1];
                 arr[j + 1] = arr[j];
                 arr[j] = t;
             }
         }
     }
 
-    return arr;
+    return arr; // будет ли правильнее возвращать другой массив ?
 }
 
 // 3
@@ -52,11 +50,11 @@ function sortAscendingMethodFor(arr) {
 
 
 function getArrWithUniqueValues(arr) {
-    let objWithUniqueValues = {};
-    let result = []; // или тут лучше arrWithUniqueValues ?
+    const objWithUniqueValues = {};
+    const result = []; // или тут лучше arrWithUniqueValues ?
 
     for (let i = 0; i < arr.length; i++) {
-        let str = arr[i];
+        const str = arr[i];
         objWithUniqueValues[str] = arr[i];
     }
 
@@ -73,10 +71,14 @@ function getArrWithUniqueValues(arr) {
 // количество которых зависит от переданного значения при вызове функции
 
 function fibonacciArr(n) {
-    let fib = [0, 1];
+    const fib = [0, 1];
 
-    for (let i = 2; i < n; i++) {
-        fib[i] = fib[i - 1] + fib[i - 2];
+    if (n < fib.length) {
+        fib.length = n;
+    } else {
+        for (let i = 2; i < n; i++) {
+            fib[i] = fib[i - 1] + fib[i - 2];
+        }
     }
 
     return fib.slice(0, n);
