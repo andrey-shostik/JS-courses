@@ -64,6 +64,26 @@ function getArrWithUniqueValues(arr) {
     return result;
 }
 
+// 3 *
+// реализовать функцию которая возвращает массив
+// с уникальными элементами // [1,1,2,3,1,2] => [1,2,3] используя Set
+
+
+function getArrWithUniqueValuesSet(arr) {
+    let uniqueValues = new Set();
+    const result = []; // или тут лучше arrWithUniqueValues ?
+
+    for (let i = 0; i < arr.length; i++) {
+        uniqueValues.add(arr[i]);
+    }
+
+    for (let key of uniqueValues) {
+        result.push(key);
+    }
+
+    return result;
+}
+
 
 // 4
 // реализовать функцию которая возвращает массив с числами фибоначчи,
@@ -99,6 +119,10 @@ console.groupEnd('Задача №2:');
 console.group('Задача №3:');
 console.log('Массив с уникальными элементами:', getArrWithUniqueValues(arrayWithNonUniqueValues));
 console.groupEnd('Задача №3:');
+
+console.group('Задача №3*:');
+console.log('через SET:', getArrWithUniqueValuesSet(arrayWithNonUniqueValues));
+console.groupEnd('Задача №3*:');
 
 console.group('Задача №4:');
 console.log('Фибоначчи:', fibonacciArr(12));
