@@ -68,7 +68,7 @@ function getArrWithUniqueValues(arr) {
 // с уникальными элементами // [1,1,2,3,1,2] => [1,2,3] используя Set
 
 function getArrWithUniqueValuesSet(arr) {
-    let uniqueValues = new Set();
+    const uniqueValues = new Set();
     const result = []; // или тут лучше arrWithUniqueValues ?
 
     for (let i = 0; i < arr.length; i++) {
