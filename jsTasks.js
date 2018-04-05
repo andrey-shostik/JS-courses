@@ -78,8 +78,8 @@ console.log(unique(arr));
 // 4. Реализовать функцию которая возвращает массив с числами фибоначчи, 
 // количество которых зависит от переданного значения при вызове функции
 
-var arrFibonacci = [0, 1];
 function fibFunction(quantity) {
+    var arrFibonacci = [0, 1];
     for (var i = 0; i < quantity; i++) {
         arrFibonacci[i + 2] = arrFibonacci[i] + arrFibonacci[i + 1];
     }
