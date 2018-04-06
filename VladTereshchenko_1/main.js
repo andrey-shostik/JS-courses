@@ -1,11 +1,13 @@
 //
 //
 //#1
-const numbersArray = [3, 3, 3, 5, 8, 10, 10, 0, 34,-5, 0];
+const numbersArray = [3, 3, 3, 5, 8, 10, '1', '2', true, 10, 0, 34, undefined, null, -5, 0];
 let add = function () {
     let sum = 0;
     for (i=0; i < numbersArray.length; i++) {
-        sum = sum + numbersArray[i];
+        if (typeof(numbersArray[i]) === 'number') {
+            sum += numbersArray[i];
+        }
     }
     return sum;
 };
@@ -63,7 +65,7 @@ console.log(unique(numbersArray));
 
 //
 //
-// #4
+// #4.1
 
 const input = +(prompt('Ведите количество чисел фибоначи: '));
 const fibArray = [];
@@ -83,7 +85,23 @@ function fib() {
 
 console.log(fib());
 
-// That's all
 
+//
+//
+//4.2
 
+function fibon(n) {
+    let fibonachArray = [];
+    fibonachArray[0] = 1;
+    fibonachArray[1] = 1;
+    if (n <= 1 ){
+        return 1;
+    } else {
+        for ( let i = 2; i <n; i++)
+            fibonachArray[i] = fibonachArray[i-1] + fibonachArray[i-2];
+    }
+    return fibonachArray;
+}
 
+console.log(fibon(input));
+/// That's all
