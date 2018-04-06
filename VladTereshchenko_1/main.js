@@ -35,8 +35,9 @@ function secondSorting() {
         }
         numbersArray[j+1] = m;
     }
+    return numbersArray;
 }
-console.log(numbersArray);
+console.log(secondSorting());
 //
 //
 //#3
@@ -48,7 +49,7 @@ function unique(arr) {
         for (let i = 0; i < arr.length; i++) {
             let str = arr[i];
             for (let j = 0; j < result.length; j++) {
-                if (result[j] == str) continue nextInput;
+                if (result[j] === str) continue nextInput;
             }
             result.push(str);
         }
