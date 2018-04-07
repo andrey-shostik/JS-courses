@@ -1,17 +1,17 @@
 //
 //
 //#1
-const numbersArray = [3, 3, 3, 5, 8, 10, '1', '2', true, 10, 0, 34, undefined, null, -5, 0];
-let add = function () {
+const generalArray = [3, 3, 3, 5, 8, 10, '1', '2', true, 10, 0, 34, undefined, null, -5, 0];
+let add = function (someArray) {
     let sum = 0;
-    for (i=0; i < numbersArray.length; i++) {
-        if (typeof(numbersArray[i]) === 'number') {
-            sum += numbersArray[i];
+    for (i=0; i < someArray.length; i++) {
+        if (typeof(someArray[i]) === 'number') {
+            sum += someArray[i];
         }
     }
     return sum;
 };
-console.log(add());
+console.log(add(generalArray));
 
 
 
@@ -20,7 +20,7 @@ console.log(add());
 //
 // #2.1
 
-let firstSorting = numbersArray.sort(function (a, b) {
+let firstSorting = generalArray.sort(function (a, b) {
     return a - b;
 });
 console.log(firstSorting);
@@ -29,24 +29,23 @@ console.log(firstSorting);
 //
 // #2.2
 
-function secondSorting() {
-    for (i = 0; i < numbersArray.length; i++) {
-        let m = numbersArray[i];
-        for (j = i - 1; j >= 0 && (numbersArray[j] > m); j--) {
-            numbersArray[j+1] = numbersArray[j];
+function secondSorting(arr) {
+    for (i = 0; i < arr.length; i++) {
+        let m = generalArray[i];
+        for (j = i - 1; j >= 0 && (arr[j] > m); j--) {
+            arr[j+1] = arr[j];
         }
-        numbersArray[j+1] = m;
+        arr[j+1] = m;
     }
-    return numbersArray;
+    return arr;
 }
-console.log(secondSorting());
+console.log(secondSorting(generalArray));
 //
 //
 //#3
 
 function unique(arr) {
     let result = [];
-
     nextInput:
         for (let i = 0; i < arr.length; i++) {
             let str = arr[i];
@@ -59,9 +58,7 @@ function unique(arr) {
     return result;
 }
 
-
-
-console.log(unique(numbersArray));
+console.log(unique(generalArray));
 
 //
 //
@@ -70,10 +67,10 @@ console.log(unique(numbersArray));
 const input = +(prompt('Ведите количество чисел фибоначи: '));
 const fibArray = [];
 
-function fib() {
+function fib(n) {
     let a = 1,
         b = 1;
-    for (let i = 3; i <= input; i++) {
+    for (let i = 3; i <= n; i++) {
         let c = a + b;
         a = b;
         b = c;
@@ -83,7 +80,7 @@ function fib() {
     return fibArray;
 }
 
-console.log(fib());
+console.log(fib(input));
 
 
 //
