@@ -1,12 +1,12 @@
 var arr = [ 1, 5, 6, 8, 9 ];
-function sumElements (arr) {
+function getSumElements (arr) {
     var sum = 0;
     for (var i=0; i<arr.length; i++){
         sum += arr[i];
     }
     return (sum);
 };
-console.log(sumElements(arr));
+console.log(getSumElements(arr));
 
 
 var arr2 = [2, 1, 9, 44, 4];
@@ -38,7 +38,7 @@ function unic (arr3) {
 
 console.log(unic(arr3));
 
-function getFibValues(a) { // не правильно работает с 0 1 2
+function getFibValues(a) { // не правильно работает с 0 1
     var fibvalues = [];
     for (var i = 0; i<3; i++) {
         if (i == 0 || i == 1) {
@@ -46,8 +46,8 @@ function getFibValues(a) { // не правильно работает с 0 1 2
         }
     }
 
-        for (i = 3; i < a; i++){
-            var first = fibvalues[i-2];/
+        for (i = 3; i <= a; i++){
+            var first = fibvalues[i-2];
             var second = fibvalues[i-3];
             var next = first + second;
             fibvalues.push(next);
