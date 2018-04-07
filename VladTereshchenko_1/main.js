@@ -87,7 +87,7 @@ console.log(fib(input));
 //
 //4.2
 
-function fibon(n) {
+function getFibon(n) {
     let fibonachArray = [];
     fibonachArray[0] = 1;
     fibonachArray[1] = 1;
@@ -100,5 +100,5 @@ function fibon(n) {
     return fibonachArray;
 }
 
-console.log(fibon(input));
+console.log(getFibon(input));
 /// That's all
