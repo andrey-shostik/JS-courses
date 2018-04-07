@@ -13,6 +13,15 @@ console.log(mySum([3, 23, 26, 40, 50]));
 //  через метод sort и через цикл for:
 
 // 2.1)Sort
+var myMass = [56, 7, 657, 0, 567, 4, 9];
+function firstSort(a, b) {
+    if (a > b) return 1;
+    if (a < b) return -1;
+    return 0;
+}
+myMass.sort(firstSort);
+console.log(myMass);
+
 
 // 2.2)For
 
@@ -32,3 +41,4 @@ arr.push( sum);
     str=arr.join(",");
     }
     }
+console.log(fibi(7));
