@@ -22,23 +22,63 @@ function firstSort(a, b) {
 myMass.sort(firstSort);
 console.log(myMass);
 
+//
+var array = [1, 2, 1, 10, 5, 3, 4, 40, 50], i = array.length, result = [];
+ 
+array.sort(function(a,b) {
+    return b-a;
+});
+ 
+while(i--){
+    if(result.join().search(array[i]+'\\b') == '-1') {
+        result.push(array[i]);
+    }
+}
+ 
+console.log(result);
+
 
 // 2.2)For
 
-
+function bubble(n) {
+    var result = [];
+    nextInput:
+    for (var i = 0; i < n.length; i++) {
+        var B = n[i];
+        for (var j = 0; j < result.length; j++) {
+            if (result[j] == B) continue nextInput;
+        }
+        result.push(B);
+    }
+    return result;
 // 3. Реализовать функцию которая возвращает массив с уникальными элементами // [1,1,2,3,1,2] => [1,2,3]
 
+var myMass = [2,4 , 2, 10, 5, 3, 4, 10, 678], i = myMass.length, result = [];
+ 
+myMass.sort(function(a,b) {
+    return b-a;
+});
+ 
+while(i--){
+    if(result.join().search(myMass[i]+'\\b') == '-1') {
+        result.push(myMass[i]);
+    }
+}
+ 
+console.log(result);
 
 // 4)Реализовать функцию которая возвращает массив с числами фибоначчи, количество которых
 // зависит от переданного значения при вызове функции
-function fibi(n) {
-    var sum = 0,i,str,arr=[];
-    for (i-0; i<n; i++){
-        if( arr.length > 1)  sum += arr[ arr.length-2];
-        if( arr.length == 1) sum = 1;
-        if( arr.length == 0) sum = 0;
-arr.push( sum);
-    str=arr.join(",");
-    }
-    }
-console.log(fibi(7));
+function fib(num){
+  var a = 1, b = 0, temp;
+
+  while (num >= 0){
+    temp = a;
+    a = a + b;
+    b = temp;
+    num--;
+  }
+
+  return b;
+}
+console.log(fib(45));
