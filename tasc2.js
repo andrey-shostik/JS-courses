@@ -1,4 +1,4 @@
-через метод sort:
+sort:
     function compareArr(a, b) {
         if (a > b) return 1;
         if (a < b) return -1;
@@ -7,8 +7,7 @@ arr.sort(compareArr);
 
 console.log(arr);
 
-
-через цикл for:
+for:
 
 function sortArrFor() {
     for (var i = 0; i < arr.length; i++) {
