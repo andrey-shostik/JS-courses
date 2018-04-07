@@ -2,8 +2,8 @@
 
 function arraySum(array) {
     var sum = 0;
-    for (var i = 0; i < array.length; i++) {
-        sum += array[i];
+    for (var firsfElement = 0; firsfElement < array.length; firsfElement++) {
+        sum += array[firsfElement];
     }
     return sum
 }
@@ -14,31 +14,31 @@ console.log(arraySum([1, 10, 15, 25, 40]));
 
 // a) метод sort:
 
-var arr = [4, 1, 45, 6, 37, 554, 2];
-function sortFunction(a, b) {
-    if (a > b) return 1;
-    if (a < b) return -1;
+var sortAscendind = [4, 1, 45, 6, 37, 554, 2];
+function sortFunction(firsfElement, secondElement) {
+    if (firsfElement > secondElement) return 1;
+    if (firsfElement < secondElement) return -1;
     return 0;
 }
-arr.sort(sortFunction);
-console.log(arr);
+sortAscendind.sort(sortFunction);
+console.log(sortAscendind);
 
 // или
 
-var arr = [4, 1, 45, 6, 37, 554, 2];
-function sortFunction(a, b) {
-    return a - b;
+var sortAscendind = [4, 1, 45, 6, 37, 554, 2];
+function sortFunction(firsfElement, secondElement) {
+    return firsfElement - secondElement;
 }
-arr.sort(sortFunction);
-console.log(arr);
+sortAscendind.sort(sortFunction);
+console.log(sortAscendind);
 
 // или
 
-var arr = [4, 1, 45, 6, 37, 554, 2];
-arr.sort(function (a, b) {
-    return a - b;
+var sortAscendind = [4, 1, 45, 6, 37, 554, 2];
+sortAscendind.sort(function (firsfElement, secondElement) {
+    return firsfElement - secondElement;
 });
-console.log(arr);
+console.log(sortAscendind);
 
 // b) цикл for:
 
@@ -59,27 +59,27 @@ console.log(arr);
 
 // 3. Реализовать функцию которая возвращает массив с уникальными элементами // [1,1,2,3,1,2] => [1,2,3]
 
-function unique(arr) {
+function uniqueElements(arr) {
     var result = [];
     nextInput:
-    for (var i = 0; i < arr.length; i++) {
-        var str = arr[i];
-        for (var j = 0; j < result.length; j++) {
-            if (result[j] == str) continue nextInput;
+    for (var firsfElement = 0; firsfElement < arr.length; firsfElement++) {
+        var tempElement = arr[firsfElement];
+        for (var secondElement = 0; secondElement < result.length; secondElement++) {
+            if (result[secondElement] == tempElement) continue nextInput;
         }
-        result.push(str);
+        result.push(tempElement);
     }
     return result;
 }
-console.log(unique([1, 1, 1, 2, 3, 1, 2, 4, 4, 10]));
+console.log(uniqueElements([1, 1, 1, 2, 3, 1, 2, 4, 4, 10]));
 
 // 4. Реализовать функцию которая возвращает массив с числами фибоначчи, 
 // количество которых зависит от переданного значения при вызове функции
 
 function fibFunction(quantity) {
     var arrFibonacci = [0, 1];
-    for (var i = 0; i < quantity; i++) {
-        arrFibonacci[i + 2] = arrFibonacci[i] + arrFibonacci[i + 1];
+    for (var firsfElement = 0; firsfElement < quantity; firsfElement++) {
+        arrFibonacci[firsfElement + 2] = arrFibonacci[firsfElement] + arrFibonacci[firsfElement + 1];
     }
     return arrFibonacci;
 }
