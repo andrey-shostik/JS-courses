@@ -11,7 +11,13 @@ function uniqueValues(unSortArr) {
         obj[temp] = true;
     }
 
-    return Object.keys(obj);
+    let uniqArr = [];
+
+    for (let key in obj) {
+        uniqArr.push(obj[key]);
+    }
+
+    return uniqArr;
 }
 
 console.log('Unique array values: ' + uniqueValues(unSortArr));
