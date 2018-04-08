@@ -1,32 +1,32 @@
-var arr = [ 1, 5, 6, 8, 9 ];
+var randomValuesArray = [ 1, 5, 6, 8, 9, 44, 2, 1, 1, 3, 7 ];
 function getSumElements (arr) {
-    var sum = 0;
-    for (var i=0; i<arr.length; i++){
-        sum += arr[i];
+    var sumElements = 0;
+    for (var i=0; i<randomValuesArray.length; i++){
+        sumElements += randomValuesArray[i];
     }
-    return (sum);
+    return (sumElements);
 };
-console.log(getSumElements(arr));
+console.log(getSumElements(randomValuesArray));
 
 
-var arr2 = [2, 1, 9, 44, 4];
 
-function ascending (a, b) {
+function getAscendingArrey (a, b) {
     if (a > b) return 1;
     if (a < b) return -1;
 };
-console.log(arr2.sort(ascending));
+console.log(randomValuesArray.sort(getAscendingArrey));
 
-var arr3 = [1,1,2,3,1,2,3];
-function unic (arr3) {
+
+
+function getUnicArrayValues (randomValuesArray) {
     var obj = {};
-    for(var i = 0; i<arr3.length; i++) {
-        var num = arr3[i];
+    for(var i = 0; i<randomValuesArray.length; i++) {
+        var num = randomValuesArray[i];
         obj[num] = true;
     }
     var result = [];
-    for(var j = 0; j<arr3.length; j++){
-        var value = arr3[j];
+    for(var j = 0; j<randomValuesArray.length; j++){
+        var value = randomValuesArray[j];
          if (obj[value] == true){
              result.push(value);
              obj[value] = false;
@@ -36,7 +36,7 @@ function unic (arr3) {
     return result;
 };
 
-console.log(unic(arr3));
+console.log(getUnicArrayValues(randomValuesArray));
 
 function getFibValues(a) { // не правильно работает с 0 1
     var fibvalues = [];
@@ -54,4 +54,4 @@ function getFibValues(a) { // не правильно работает с 0 1
         }
     return fibvalues;
     }
-console.log(getFibValues(0));
+console.log(getFibValues(10));
