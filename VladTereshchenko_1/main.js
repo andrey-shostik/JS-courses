@@ -88,16 +88,16 @@ console.log(fib(input));
 //4.2
 
 function getFibon(n) {
-    let fibonachArray = [];
-    fibonachArray[0] = 1;
-    fibonachArray[1] = 1;
+    let fibonachiArray = [];
+    fibonachiArray[0] = 1;
+    fibonachiArray[1] = 1;
     if (n <= 1 ){
         return 1;
     } else {
         for ( let i = 2; i <n; i++)
-            fibonachArray[i] = fibonachArray[i-1] + fibonachArray[i-2];
+            fibonachiArray[i] = fibonachiArray[i-1] + fibonachiArray[i-2];
     }
-    return fibonachArray;
+    return fibonachiArray;
 }
 
 console.log(getFibon(input));
