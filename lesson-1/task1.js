@@ -2,7 +2,7 @@
 
 const arr = [7, 5, 23, 11, 18, 1, 8, 3, 'text', undefined];
 
-function getSumArray() {
+function getSumArray(arr) {
     let sum = 0;
     for (let i = 0; i < arr.length; i++) {
         if (!isNaN(arr[i])) {
@@ -14,4 +14,4 @@ function getSumArray() {
     return sum;
 }
 
-console.log('Sum of the array: ' + getSumArray());
+console.log('Sum of the array: ' + getSumArray(arr));
