@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--task 1 html-->
+<input type="text" id="input">
+<input type="button" onclick="countSum()" value="click">
+<input type="button" onclick="arraySum()" value="count">
+    <script>
+        //task 1
+        var inputValue = document.getElementById('input')
+        var inputArray =[];
+        function countSum(){
+            inputArray.push(inputValue.value);
+            inputValue.value = '';
+        }
+        console.log(inputArray)
+
+        function arraySum() {
+            var sum = 0;
+            for (var i = 0; i < inputArray.length; i++){
+                sum += parseFloat(inputArray[i])
+            }
+            console.log(sum)
+        }
+        //end
+
+        //task 2 v1
+        // var array = [1, 2, 5, 8, 6, 4];
+        //     for (var i = 0; i < array.length; i++){
+        //         thisElement = array[i]
+        //         for (var j = i - 1; j >= 0 && (array[j] > thisElement); j--){
+        //             array[j + 1] = array[j]
+        //         }
+        //         array[j + 1] = thisElement;
+        //     }
+        // console.log(array)
+
+        //task 2 v2
+        // var array = [0,2,5,3,7, -1, -5, -3.14]
+        //     array.sort(function getArray(a, b) {
+        //         return a - b;
+        //     });
+        // console.log(array)
+
+        //task 3 v1
+        // var array = [1, 2, 3, 5, 2, 3];
+        // array.sort();
+        // for (var i = 0; i < array.length; i++){
+        //     if (array[i] == array[i + 1]) {
+        //         array.splice(i, 1);
+        //     }
+        // }
+        // console.log(array);
+
+        //task 3 v2
+        // var array = [1, 2, 3, 5, 2, 3];
+        // function getUnique(arr) {
+        //     var obj = {};
+        //     for (var i = 0; i < arr.length; i++){
+        //         var str = arr[i];
+        //         obj[str] = true;
+        //     }
+        //     return Object.keys(obj);
+        // }
+        // console.log(getUnique(array))
+        //
+        // //task 4
+        // function createFib(j) {
+        //     var arr = [];
+        //     arr[0] = 1;
+        //     arr[1] = 1;
+        //     j = j - 3;
+        //     for (var i = 0; (i < arr.length) && (i <= j); i++) {
+        //         arr[i + 2] = arr[i] + arr[i + 1];
+        //         }
+        //         return arr
+        // }
+        // document.write(createFib(10));
+
+    </script>
+</body>
+</html>
