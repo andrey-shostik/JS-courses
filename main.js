@@ -1,5 +1,5 @@
 
-//1
+//Задача 1
 
 var array = [1, 3, 5, 7];
 var arraySum = 0;
@@ -11,48 +11,48 @@ array.forEach(function (item) {
 console.log(arraySum);
 
 
-//2
+//Задача 2
 
-var num = [10, 3, 1, 9, 2, 22];
+var arrayOfNumbers = [10, 3, 1, 9, 2, 22];
 
 num.sort(function(a, b){
     return a-b
 });
 
-console.log(num);
+console.log(arrayOfNumbers);
 
 
-//2.2
+//Задача 2.2
 
-function sortNumFor(num) {
-    var n = num.length;
+function sortingArray(arrayOfNumbers) {
+    var n = arrayOfNumbers.length;
     var j;
     for (let i = 0; i < n; i++) {
         for (let j = i+1; j < n; j++) {
-            if (num[i] > num[j]) {
+            if (arrayOfNumbers[i] > arrayOfNumbers[j]) {
                 j = num[i];
-                num[i] = num[j];
-                num[j] = j;
+                arrayOfNumbers[i] = arrayOfNumbers[j];
+                arrayOfNumbers[j] = j;
                 }
         }
     }
-    return num;
+    return arrayOfNumbers;
 }
-console.log(sortNumFor(num));
+console.log(sortingArray(arrayOfNumbers));
 
-//3
+//Задача 3
 
 var arr = [1,1,2,3,1,2];
 
-function uniqueVal(value, index, self) {
+function returnUniqueVal(value, index, self) {
     return self.indexOf(value) == index;
 }
-console.log( arr.filter( uniqueVal) );
+console.log( arr.filter( returnUniqueVal) );
 
 
-//4
+//Задача 4
 
-function fibonachi(n) {
+function getFibonachiNumbers(n) {
     var a = 1,
         b = 1;
     for (var i = 3; i <= n; i++) {
@@ -62,9 +62,9 @@ function fibonachi(n) {
     }
     return b;
 }
-console.log(fibonachi (5));
-console.log(fibonachi (10));
-console.log(fibonachi (30));
+console.log(getFibonachiNumbers (5));
+console.log(getFibonachiNumbers (10));
+console.log(getFibonachiNumbers (30));
 
 
 
