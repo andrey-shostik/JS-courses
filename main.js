@@ -15,7 +15,7 @@ console.log(arraySum);
 
 var arrayOfNumbers = [10, 3, 1, 9, 2, 22];
 
-num.sort(function(a, b){
+arrayOfNumbers.sort(function(a, b){
     return a-b
 });
 
@@ -30,7 +30,7 @@ function sortingArray(arrayOfNumbers) {
     for (let i = 0; i < n; i++) {
         for (let j = i+1; j < n; j++) {
             if (arrayOfNumbers[i] > arrayOfNumbers[j]) {
-                j = num[i];
+                j = arrayOfNumbers[i];
                 arrayOfNumbers[i] = arrayOfNumbers[j];
                 arrayOfNumbers[j] = j;
                 }
