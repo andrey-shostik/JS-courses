@@ -14,21 +14,21 @@ console.log(sumElements(1,2,3,4));
 // Задание 2.Реализовать функцию которая принимает произвольный массив и возвращает отсортированный по возрастанию через цикл for.
 
 function getSortedArray() {
-  let array = [],
+  let array = [1,3,-1,0,2,13],
       index ,firstValue,secondValue,thirdValue = array.length;
 
   for (firstValue = 0; firstValue < thirdValue; firstValue++) {
       for(index = 0; index < thirdValue-1; index++) {
         if(array[index] > array[index+1]) {
-            secondValue = array[i];
-            array[index] = array[i+1];
+            secondValue = array[index];
+            array[index] = array[index+1];
             array[index+1] = secondValue;
       }
     }
   }
   return array;
 }
-console.log(getSortedArray(1,3,2,-1,0,4));
+console.log(getSortedArray());
 
 // Задание 2.1. Реализовать функцию которая принимает произвольный массив и возвращает отсортированный по возрастанию через sort.
 const numArray = [1,5,2,-1,7,8,3];
