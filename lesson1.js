@@ -1,70 +1,75 @@
 // Задание 1.Реализовать функцию которая вернет сумму элементов произвольного массива
 
-var funcSumElements = function() {
-    let i;
-    let sum = 0;
-    for(i = 0; i < arguments.length; i++){
-      sum += arguments[i];
-    }
-    return sum;
-  }
+let sumElements = function() {
+  let sum = 0;
 
-  console.log(funcSumElements(1,2,3,4));
+  for(let index = 0; index < arguments.length; index++) {
+      sum += arguments[index];
+  }
+  return sum;
+}
+
+console.log(sumElements(1,2,3,4));
 
 // Задание 2.Реализовать функцию которая принимает произвольный массив и возвращает отсортированный по возрастанию через цикл for.
 
-  function funcSort() {
-  let a = [4,1,5,9,2,3],
-      i ,b,c,n = a.length;
-  for (b = 0; b < n;b++){
-  for(i = 0; i < n-1; i++){
-    if(a[i] > a[i+1]){
-      c = a[i];
-      a[i] = a[i+1];
-      a[i+1] = c;
+function getSortedArray() {
+  let array = [],
+      index ,firstValue,secondValue,thirdValue = array.length;
+
+  for (firstValue = 0; firstValue < thirdValue; firstValue++) {
+      for(index = 0; index < thirdValue-1; index++) {
+        if(array[index] > array[index+1]) {
+            secondValue = array[i];
+            array[index] = array[i+1];
+            array[index+1] = secondValue;
+      }
     }
   }
-  }
-  return a;
-  }
-  console.log(funcSort());
+  return array;
+}
+console.log(getSortedArray(1,3,2,-1,0,4));
 
 // Задание 2.1. Реализовать функцию которая принимает произвольный массив и возвращает отсортированный по возрастанию через sort.
-var numArray = [1,5,2,-1,7,8,3];
-var Sorting = numArray.sort(function (a, b) {
+const numArray = [1,5,2,-1,7,8,3];
+
+let sorted = numArray.sort(function (a, b) {
     return a - b;
 });
-console.log(Sorting);
+console.log(sorted);
 
 // Задание 3. Реализовать функцию которая возвращает массив с уникальными элементами
 
-var uniqueEl = function (arr) {
+let getUniqueElements = function (arr) {
     let newArr = [];
-    let i = arr.length - 1;
+    let index = arr.length - 1;
     let test = {};
-    for (; i >= 0; i--) {
-        if (arr [i] in test) continue;
-        newArr.push(arr[i]);
-        test[arr[i]] = 1;
+
+    for (; index >= 0; index--) {
+        if (arr [index] in test) continue;
+        newArr.push(arr[index]);
+        test[arr[index]] = 1;
     }
     return newArr;
 }
 
-var arr = ['1', 'Слово', '1', 'Слово', '2', '2'];
-console.log(uniqueEl(arr));
+let arr = ['1', 'Слово', '1', 'Слово', '2', '2'];
+console.log(getUniqueElements(arr));
 
 // Задание 4. Реализовать функцию которая возвращает массив с числами фибоначчи, количество которых зависит от переданного значения при вызове функции
 
 function fibonacci(n) {
-    let newArray = [];
+    const newArray = [];
     newArray[0] = 1;
     newArray[1] = 1;
-    if (n <= 1 ){
-        return 1;
+
+    if (n <= 1 ) {
+      return 1;
     } else {
-        for ( var i = 2; i <n; i++)
-         newArray[i] = newArray[i-1] + newArray[i-2];
+      for (let index = 2; index <n ; index++) {
+      newArray[index] = newArray[index-1] + newArray[index-2];
     }
+  }
     return newArray;
 }
 
