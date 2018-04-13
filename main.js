@@ -1,88 +1,92 @@
 // Task 1. Pеализовать функцию которая вернет сумму элементов произвольного массива.
 
-var arr = [2,3,6,12,13];
+var arrayForExamples = [2, 1, 6, -3, 13, -2];
 
-function getSumArr() {
-    var sum = 0;
-    for(var i = 0; i < arr.length; i++) {
-        sum += arr[i];
-    }
 
-    return sum;
+function getSumArr(arr) {
+
+    return arr.reduce(function(sum, current) {
+        return sum + current;
+    }, 0);
+
+    // var sum = 0;
+    // for(var i = 0; i < array.length; i++) {
+    //     sum += arr[i];
+    // }
+    //
+    // return sum;
 }
 
-console.log(getSumArr());
+console.log(getSumArr(arrayForExamples));
 
 // Task2. Pеализовать функцию которая принимает произвольный массив и возвращает отсортированный по возростанию, сделать двумя способами, через метод sort и через цикл for
 
-var arr = [3, 1, 3, 34, 12, -2];
 
-function getSortArr() {
+function getSortArray(arr) {
 
     for(var i = 0; i < arr.length; i++) {
         for (var j = 0; j < arr.length; j++) {
-
-            if (arr[j] > arr[j + 1]) {
-
-                var sort = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = sort;
-
+            if (arr[i] < arr[j]){
+                [arr[i], arr[j]] = [arr[j], arr[i]];
             }
-
         }
     }
     return arr;
 }
 
-console.log(getSortArr());
+console.log(getSortArray(arrayForExamples));
 
 
 // №2...
 
-function sortArr() {
-    function Num(a, b) {
-        if (a > b) {
-            return 1;
-        }
-        if (a < b) {
-            return -1;
-        }
+function sortArr(arr) {
+
+    function num(a, b) {
+        if (a > b)  return 1;
+        if (a < b)  return -1;
     }
 
-    return arr.sort(Num);
+    return arr.sort(num);
 }
 
-console.log(sortArr());
+console.log(sortArr(arrayForExamples));
 
 // Task 3. Pеализовать функцию которая возвращает массив с уникальными элементами  [1,1,2,3,1,2] = [1,2,3]
 
-var arr = [1,2,1,2,3,1,2];
-var newArr = [];
+var arrInitialData = [1,2,1,2,3,1,2];
+var newArrUniqueElements = [];
 
-function sortMyArr() {
+function getUniqueElements(arr) {
 
-    next:
-    for(var i = 0; i < arr.length; i++) {
+    var set = new Set(arr);
+        set.forEach(function (val) {
+            newArrUniqueElements.push(val);
+        });
+       return newArrUniqueElements;
 
-        var value = arr[i];
+
+    /*next:
+    for(var i = 0; i < arrInitialData.length; i++) {
+
+        var value = arrInitialData[i];
 
         for (var j = 0; j < arr.length; j++) {
-            if(newArr[j] == value) {
+            if(newArrUniqueElements[j] == value) {
                 continue next;
             }
         }
 
-        newArr.push(value);
+        newArrUniqueElements.push(value);
     }
-    return newArr;
+    return newArrUniqueElements;*/
 }
 
-console.log(sortMyArr());
+console.log(getUniqueElements(arrInitialData));
 
 
 // Task 4. Pеализовать функцию которая возвращает массив с числами фибоначчи, количество которых зависит от переданного значения при вызове функции
-var newArr = [];
+
+var newArrNumFibonachi = [];
 
 function getArrFibonachi(num) {
     var a = 1,
@@ -92,12 +96,11 @@ function getArrFibonachi(num) {
         var c = a + b;
         a = b;
         b = c;
-        newArr.push(b);
+        newArrNumFibonachi.push(b);
     }
 
-    return newArr;
+    return newArrNumFibonachi;
 }
 
 console.log(getArrFibonachi(5));
-
 
