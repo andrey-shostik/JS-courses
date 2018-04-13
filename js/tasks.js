@@ -30,17 +30,19 @@ function sortAscending(arr) {
 
 // *** через цикл for
 function sortAscendingMethodFor(arr) {
-    for (let i = 0; i < arr.length - 1; i++) {
-        for (let j = 0; j < arr.length - 1 - i; j++) {
-            if (arr[j + 1] < arr[j]) {
-                const t = arr[j + 1];
-                arr[j + 1] = arr[j];
-                arr[j] = t;
+    const sortedArray = arr.slice();
+
+    for (let i = 0; i < sortedArray.length - 1; i++) {
+        for (let j = 0; j < sortedArray.length - 1 - i; j++) {
+            if (sortedArray[j + 1] < sortedArray[j]) {
+                const t = sortedArray[j + 1];
+                sortedArray[j + 1] = sortedArray[j];
+                sortedArray[j] = t;
             }
         }
     }
 
-    return arr; // будет ли правильнее возвращать другой массив ?
+    return sortedArray;
 }
 
 // 3
@@ -49,11 +51,11 @@ function sortAscendingMethodFor(arr) {
 
 function getArrWithUniqueValues(arr) {
     const objWithUniqueValues = {};
-    const result = []; // или тут лучше arrWithUniqueValues ?
+    const result = [];
 
     for (let i = 0; i < arr.length; i++) {
-        const str = arr[i];
-        objWithUniqueValues[str] = arr[i];
+        const value = arr[i];
+        objWithUniqueValues[value] = arr[i];
     }
 
     for (let key in objWithUniqueValues) {
@@ -68,12 +70,8 @@ function getArrWithUniqueValues(arr) {
 // с уникальными элементами // [1,1,2,3,1,2] => [1,2,3] используя Set
 
 function getArrWithUniqueValuesSet(arr) {
-    const uniqueValues = new Set();
-    const result = []; // или тут лучше arrWithUniqueValues ?
-
-    for (let i = 0; i < arr.length; i++) {
-        uniqueValues.add(arr[i]);
-    }
+    const uniqueValues = new Set(arr);
+    const result = [];
 
     for (let key of uniqueValues) {
         result.push(key);
