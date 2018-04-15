@@ -6,7 +6,7 @@
 ##  JS
 [Методы для перебора массивов](https://learn.javascript.ru/array-iteration)
 
-[Методы массива](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array) - пересмотреть
+Пересмотреть [Методы массива](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
 [Деструктуризация](https://learn.javascript.ru/destructuring)
 
