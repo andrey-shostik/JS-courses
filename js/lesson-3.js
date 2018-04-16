@@ -14,6 +14,69 @@ const dataOnCarPrices = `[
     {"id":10,"name":"Insight","firstPrice":9030,"secondPrice":9207}
 ]`;
 
+const dataSet = `{
+  "requestId" : "eed3fc9d337261ea23f0",
+  "result" : [ {
+    "accountNumber" : "40802810800000018334",
+    "agreementNumber" : "7000351523",
+    "type" : 14,
+    "status" : "NORM",
+    "tariffCode" : "TFLE1.1",
+    "createdOn" : "2016-09-14T00:00:00",
+    "currency" : "643",
+    "mainFlag" : "Y",
+    "balance" : {
+      "balance" : 0,
+      "otb" : 0,
+      "authorized" : 0,
+      "pendingPayments" : 0,
+      "pendingRequisitions" : 0
+    },
+    "newBalance" : {
+      "balance" : 0,
+      "otb" : 0,
+      "authorized" : 0,
+      "pendingPayments" : 0,
+      "pendingRequisitions" : 0,
+      "techOver" : 0
+    },
+    "stats" : {
+      "debit" : 0,
+      "credit" : 0,
+      "interest" : 0
+    },
+    "cards" : [ {
+      "number" : "553420******3894",
+      "expireDate" : {
+        "year" : 2021,
+        "month" : 9
+      },
+      "embossedName" : "DAVID UBILAVA",
+      "name" : "DAVID UBILAVA",
+      "isActive" : true,
+      "ucid" : 1024452429,
+      "status" : "BAML",
+      "ownedByCurrentUser" : true
+    } ],
+    "overIsAvailable" : 0,
+    "overdraftInfo" : {
+      "amount" : 0,
+      "clientIsInOver" : 0,
+      "lastCloseDayOverBalance" : 0,
+      "currentVirtualOverBalance" : 0,
+      "fullOverBalance" : 0
+    },
+    "activationDate" : "2016-09-16T00:00:00",
+    "bank" : {
+      "id" : 99,
+      "name" : "tcs-sme",
+      "bic" : "044525974",
+      "isExternal" : false
+    }
+  } ],
+  "success" : true
+}`;
+
 // ЗАДАЧИ **********************************
 
 // 1
@@ -21,10 +84,12 @@ const dataOnCarPrices = `[
 
 function getPartialSumArray(arr) {
     const result = [];
+
     if (!arr.length) return result;
 
     let totalSum = arr.reduce((sum, item) => {
         result.push(sum);
+
         return sum + item;
     });
     result.push(totalSum);
@@ -56,15 +121,36 @@ function getFilteredArrayByAveragePrice(data, minAveragePrice) {
     const carPrices = getJsonData(data);
 
     return carPrices.filter(function (value) {
-       return value["averagePrice"] > minAveragePrice;
+
+        return value["averagePrice"] > minAveragePrice;
     });
 }
 
 // 4
 // Деструктурировать свойства из JSON:
 
-function destructProperties() {
+function destructProperties(data) {
+    const properties = JSON.parse(data);
 
+    let {requestId} = properties;
+    let {result: [{accountNumber}]} = properties;
+    let {result: [{balance: {otb}}]} = properties;
+    let {result: [{cards: [{ucid}]}]} = properties;
+    const {result: [{cards: [{expireDate}]}]} = properties;
+    let {result: [{cards: [{expireDate: {year}}]}]} = properties;
+    let {result: [{overdraftInfo: {lastCloseDayOverBalance}}]} = properties;
+    let {result: [{bank: {id}}]} = properties;
+
+    console.log(requestId);
+    console.log(accountNumber);
+    console.log(otb);
+    console.log(ucid);
+    console.log(expireDate);
+    console.log(year);
+    console.log(lastCloseDayOverBalance);
+    console.log(id);
+
+    return '<<<<>>>>'
 }
 
 // *********************************
@@ -84,10 +170,9 @@ console.log(getFilteredArrayByAveragePrice(dataOnCarPrices, 5000));
 console.groupEnd('Задача №3:');
 
 console.group('Задача №4:');
-console.log(destructProperties());
+console.log(destructProperties(dataSet));
 console.groupEnd('Задача №4:');
 
 console.groupEnd('Вызовы:');
 
 // *********************************
-
