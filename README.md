@@ -30,4 +30,4 @@
    const {requestId} = {...};
    const {requestId123} = {...};
    ```
-PS. Обязательное условие - пишем на новом стандарте. var => let/const, () => {} вместо function - когда актуально и т.д.  
+PS. Обязательное условие - пишем на новом стандарте. var => let/const, () => {} вместо function - когда актуально и т.д. Кто еще не ознакомился - [ES6](https://learn.javascript.ru/es-modern)
