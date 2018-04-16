@@ -24,3 +24,9 @@
     * result.cards.expireDate.year,
     * result.overdraftInfo.lastCloseDayOverBalance, 
     * result.bank.id
+    
+   Пример: 
+   ```
+   const {requestId} = {...};
+   const {requestId123} = {...};
+   ```
