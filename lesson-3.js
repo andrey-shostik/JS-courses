@@ -28,7 +28,8 @@ console.log( getPartialSumArray([3,12,4,1,156,42,17]) );
 
 
 
-/* Деструктурировать свойства из JSON:
+/* задание 4: 
+   Деструктурировать свойства из JSON:
    requestId,
    result.accountNumber,
    result.balance.otb,
