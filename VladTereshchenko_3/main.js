@@ -9,7 +9,6 @@ const getSums = (array) => {
     if (!array.length) {
         return newArray;
     }
-
     const totalAmount = array.reduce(function (sum, item) {
         newArray.push(sum);
         return sum + item;
@@ -17,8 +16,6 @@ const getSums = (array) => {
     newArray.push(totalAmount);
     return newArray;
 };
-
-
 console.log(getSums(generalArray));
 
 //
@@ -65,13 +62,8 @@ const getSortedArray = array => {
     return newArray;
 };
 
-
-
 let sortedArray = getSortedArray(arrayWithAvaragePrice);
-
 console.log(sortedArray);
-
-
 //
 //
 // #4
@@ -152,4 +144,3 @@ const {result:[{overdraftInfo: {lastCloseDayOverBalance}}]} = generalObj;
 const {result:[{bank: {id}}]} = generalObj;
 
 console.log(requestId, accountNumber, balance, otb, ucid, expireDate, year, lastCloseDayOverBalance, id);
-
