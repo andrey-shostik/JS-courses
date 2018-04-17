@@ -1,24 +1,26 @@
 // задание 1: Реализовать функцию которая возвращает массив его частичных сумм c помощью reduce // [1,2,3,4,5] => [1, 3, 6, 10, 15]
 
-function getPartialSumArray(arr) {
-  var result = [];
-    if (!arr.length) return result;
+const specifiedNumbersArray = [3,12,4,1,156,42,17];
 
-  var totalSum = arr.reduce(function(sum, item) {
+let getPartialSumArray = array => {
+  let result = [];
+    if (!array.length) return result;
+
+  let totalSum = array.reduce(function(sum, item) {
     result.push(sum);
     return sum + item;
   });
   
   result.push(totalSum);
   return result;
-}
-console.log( getPartialSumArray([3,12,4,1,156,42,17]) );
+};
+console.log( getPartialSumArray(specifiedNumbersArray) );
 
 /* задание 2: Реализовать функцию которая вернет новый массив на основе этого https://pastebin.com/0xvghaeT, элементы
    которого должны быть объектами и иметь поля id, name и avaragePrice - среднее арифметическое от суммы
    firstPrice и secondPrice, нужно использовать метод map. */
 
-var sourceArray = [
+const carsPriceArr = [
 {"id":1,"name":"Sprinter 2500","firstPrice":8172,"secondPrice":9273},
 {"id":2,"name":"Touareg","firstPrice":5856,"secondPrice":5130},
 {"id":3,"name":"Avenger","firstPrice":8674,"secondPrice":3118},
@@ -31,16 +33,19 @@ var sourceArray = [
 {"id":10,"name":"Insight","firstPrice":9030,"secondPrice":9207}
 ];
 
-var resultArr = [];
+let getAveragePriceArray = array => {
+  let averagePriceArray = array.map(itemField => {
+    let {id, name, firstPrice, secondPrice} = itemField;
+    let averagePrice = (firstPrice + secondPrice)/2;
+    return {id, name, averagePrice};
+  });
+	
+  return averagePriceArray;
+};
 
-for (var {"id":id, "name":name, "firstPrice":firstPrice, "secondPrice":secondPrice} of sourceArray) {
-	function average() {
-    var sum = 0;
-      for (var i = 0; i < arguments[i]; i++ ) sum += arguments[i];
-      return sum == 0 ? sum : sum / arguments.length;
-  }
-console.log("ID: " + id + ", NAME: " + name + ", Average Price: " + average (firstPrice, secondPrice));
-}
+const averagePriceArray = getAveragePriceArray(carsPriceArr);
+console.log(carsPriceArr);
+console.log(averagePriceArray);
 
 
 /* задание 3: Реализовать функцию которая вернет массив с элементами в которых avaragePrice > 5000, элементы массива 
