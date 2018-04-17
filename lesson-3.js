@@ -20,7 +20,7 @@ console.log( getPartialSumArray(specifiedNumbersArray) );
    которого должны быть объектами и иметь поля id, name и avaragePrice - среднее арифметическое от суммы
    firstPrice и secondPrice, нужно использовать метод map. */
 
-const carsPriceArray = [
+const infoCarsArray = [
 {"id":1,"name":"Sprinter 2500","firstPrice":8172,"secondPrice":9273},
 {"id":2,"name":"Touareg","firstPrice":5856,"secondPrice":5130},
 {"id":3,"name":"Avenger","firstPrice":8674,"secondPrice":3118},
@@ -33,7 +33,7 @@ const carsPriceArray = [
 {"id":10,"name":"Insight","firstPrice":9030,"secondPrice":9207}
 ];
 
-let getAveragePriceArray = array => {
+let getAveragePrice = array => {
   let averagePriceArray = array.map(itemField => {
     let {id, name, firstPrice, secondPrice} = itemField;
     let averagePrice = (firstPrice + secondPrice)/2;
@@ -43,8 +43,8 @@ let getAveragePriceArray = array => {
   return averagePriceArray;
 };
 
-const averagePriceArray = getAveragePriceArray(carsPriceArray);
-console.log(carsPriceArray);
+const averagePriceArray = getAveragePrice(infoCarsArray);
+console.log(infoCarsArray);
 console.log(averagePriceArray);
 
 
