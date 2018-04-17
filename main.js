@@ -26,7 +26,6 @@ console.log(arrayOfNumbers);
 
 function sortingArray(arrayOfNumbers) {
     var n = arrayOfNumbers.length;
-    var j;
     for (let i = 0; i < n; i++) {
         for (let j = i+1; j < n; j++) {
             if (arrayOfNumbers[i] > arrayOfNumbers[j]) {
@@ -53,14 +52,15 @@ console.log( arr.filter( returnUniqueVal) );
 //Задача 4
 
 function getFibonachiNumbers(n) {
-    var a = 1,
-        b = 1;
-    for (var i = 3; i <= n; i++) {
-        var c = a + b;
-        a = b;
-        b = c;
+    var firstNum = 1;
+    var secondNum = 1;
+    var nextNum = 3;
+    for (nextNum; nextNum <= n; nextNum++) {
+        var sum = firstNum + secondNum;
+        firstNum = secondNum;
+        secondNum = sum;
     }
-    return b;
+    return secondNum;
 }
 console.log(getFibonachiNumbers (5));
 console.log(getFibonachiNumbers (10));
