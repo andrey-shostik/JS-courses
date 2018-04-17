@@ -54,22 +54,18 @@ console.log(arrayWithAvaragePrice);
 //
 //
 //#3
-
 const getSortedArray = array => {
     let newArray = [];
-    newArray = array.map(function (item) {
-        const {avaragePrice} = item;
-        if (avaragePrice > 5000) {
-            return item;
-        }
-    }).sort(function (a, b) {
+    newArray = array.filter(({avaragePrice},item) => item > 5000)
+    .sort(function (a, b) {
         if (a.avaragePrice > b.avaragePrice) {
             return 1;
         }
     });
-
     return newArray;
 };
+
+
 
 let sortedArray = getSortedArray(arrayWithAvaragePrice);
 
