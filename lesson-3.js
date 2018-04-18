@@ -2,18 +2,17 @@
 
 const specifiedNumbersArray = [3,12,4,1,156,42,17];
 
-let getPartialSumArray = array => {
-  let result = [];
-    if (!array.length) return result;
-
-  let totalSum = array.reduce(function(sum, item) {
+function getPartialSumArray(array) {
+	let result = [];
+		if (!array.length) return result;
+	let totalSum = array.reduce(function(sum, item) {
     result.push(sum);
     return sum + item;
   });
-  
   result.push(totalSum);
   return result;
 };
+
 console.log( getPartialSumArray(specifiedNumbersArray) );
 
 /* задание 2: Реализовать функцию которая вернет новый массив на основе этого https://pastebin.com/0xvghaeT, элементы
@@ -33,14 +32,13 @@ const infoCarsArray = [
 {"id":10,"name":"Insight","firstPrice":9030,"secondPrice":9207}
 ];
 
-let getAveragePrice = array => {
-  let averagePriceArray = array.map(itemField => {
-    let {id, name, firstPrice, secondPrice} = itemField;
-    let averagePrice = (firstPrice + secondPrice)/2;
-    return {id, name, averagePrice};
-  });
-	
-  return averagePriceArray;
+function getAveragePrice(array) {
+	let averagePriceArray = array.map(function(itemField) {
+		let {id, name, firstPrice, secondPrice} = itemField;
+		let averagePrice = (firstPrice + secondPrice)/2;
+		return {id, name, averagePrice};
+	});
+	return averagePriceArray;
 };
 
 const averagePriceArray = getAveragePrice(infoCarsArray);
@@ -52,7 +50,17 @@ console.log(averagePriceArray);
    должны быть отсортированны по полю avaragePrice, по возростанию. Массив брать из вызова функции задания 2, 
    нужно использовать методы filter и sort. */
 
+function getSortAveragePrice(array) {
+	let filteredAveragePrice = array.filter(function(item) {
+		return item.averagePrice > 5000;
+    });
+	let sortedAveragePrice = filteredAveragePrice.sort(function(firstValue, secondValue) {
+		return firstValue.averagePrice - secondValue.averagePrice;
+    });
+	return sortedAveragePrice;
+};
 
+console.log( getSortAveragePrice(averagePriceArray) );
 
 
 /* задание 4: 
