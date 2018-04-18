@@ -38,8 +38,6 @@ function avaregePrice(arr) {
 }
 console.log(avaregePrice(arryCars));
 
-
-
 // Задача 3
 
 function arryFilterSort(arr) {
@@ -53,44 +51,3 @@ function arryFilterSort(arr) {
     return sortUP
 }
 console.log(arryFilterSort(avaregePrice(arryCars)));
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-
-let sortUP = avaregePrice(arryCars).sort(function (a,b) {
-    return a.avaragePrice - b.avaragePrice
-    });
-
-console.log(sortUP);
-
-let longWords = arryCars.filter(function (avaragePrice){
-    return avaragePrice > 5000 });
-
-console.log(longWords);
-
-let sortUP = avaregePrice(arryCars).sort(function (a,b) {
-    return a.avaragePrice - b.avaragePrice
-    });
-
-console.log(sortUP);
-
-function isBigEnough(avaragePrice) {
-    if (avaragePrice > 5000){
-    return avaragePrice
-}}
-
-
-let isi = arryCars.filter(isBigEnough);
-console.log(isBigEnough(arryCars));
-console.log(isi);*/
