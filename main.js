@@ -35,6 +35,62 @@ function avaregePrice(arr) {
         let avaragePrice = (firstPrice + secondPrice) / 2;
         return {id, name, avaragePrice}
     })
-};
+}
 console.log(avaregePrice(arryCars));
 
+
+
+// Задача 3
+
+function arryFilterSort(arr) {
+        let filterAvaragePrice = arr.filter(function (a) {
+        return a.avaragePrice > 5000
+    });
+
+    let sortUP = filterAvaragePrice.sort(function (a, b) {
+        return a.avaragePrice - b.avaragePrice
+    });
+    return sortUP
+}
+console.log(arryFilterSort(avaregePrice(arryCars)));
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+let sortUP = avaregePrice(arryCars).sort(function (a,b) {
+    return a.avaragePrice - b.avaragePrice
+    });
+
+console.log(sortUP);
+
+let longWords = arryCars.filter(function (avaragePrice){
+    return avaragePrice > 5000 });
+
+console.log(longWords);
+
+let sortUP = avaregePrice(arryCars).sort(function (a,b) {
+    return a.avaragePrice - b.avaragePrice
+    });
+
+console.log(sortUP);
+
+function isBigEnough(avaragePrice) {
+    if (avaragePrice > 5000){
+    return avaragePrice
+}}
+
+
+let isi = arryCars.filter(isBigEnough);
+console.log(isBigEnough(arryCars));
+console.log(isi);*/
