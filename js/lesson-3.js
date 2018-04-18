@@ -80,7 +80,6 @@ const dataSet = `{
 // ЗАДАЧИ **********************************
 
 // 1
-// Реализовать функцию которая возвращает массив его частичных сумм // [1,2,3,4,5] => [1, 3, 6, 10, 15]
 
 function getPartialSumArray(arr) {
     const result = [];
@@ -98,36 +97,24 @@ function getPartialSumArray(arr) {
 }
 
 // 2
-// Реализовать функцию которая вернет новый массив на основе этого https://pastebin.com/0xvghaeT, элементы которого
-// должны быть объектами и иметь поля id, name и averagePrice - среднее арифметическое от суммы firstPrice и secondPrice.
 
 function getJsonData(data) {
     const carPrices = JSON.parse(data);
 
-    return carPrices.map(function (carData) {
-        carData["averagePrice"] = (carData["firstPrice"] + carData["secondPrice"]) / 2;
-        delete carData["firstPrice"];
-        delete carData["secondPrice"];
-
-        return carData;
-    });
+    return carPrices.map(({id, name, firstPrice, secondPrice}) =>
+        ({id, name, averagePrice: (firstPrice + secondPrice) / 2}));
 }
 
 // 3
-// Реализовать функцию которая вернет массив с элементами в которых averagePrice > 5000, элементы массива должны быть
-// отсортированны по полю averagePrice, по возростанию. Массив брать из вызова функции задания 2.
 
 function getFilteredArrayByAveragePrice(data, minAveragePrice) {
     const carPrices = getJsonData(data);
 
-    return carPrices.filter(function (value) {
-
-        return value["averagePrice"] > minAveragePrice;
-    });
+    return carPrices.filter(({averagePrice}) => averagePrice > minAveragePrice)
+        .sort((x, y) => x.averagePrice - y.averagePrice);
 }
 
 // 4
-// Деструктурировать свойства из JSON:
 
 function destructProperties(data) {
     const properties = JSON.parse(data);
@@ -150,7 +137,7 @@ function destructProperties(data) {
     console.log(lastCloseDayOverBalance);
     console.log(id);
 
-    return '<<<<>>>>'
+    return '<<<<END>>>>'
 }
 
 // *********************************
