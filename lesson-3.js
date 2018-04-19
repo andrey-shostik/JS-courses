@@ -32,6 +32,12 @@ const infoCarsArray = [
 {"id":10,"name":"Insight","firstPrice":9030,"secondPrice":9207}
 ];
 
+console.log("Информация из исходного массива:");
+
+for (let {"id": id, "name": name, "firstPrice": firstPrice, "secondPrice": secondPrice} of infoCarsArray) {
+	console.log("id: " + id + ', ' + "Name: " + name + ", " + "firstPrice: " + firstPrice + ", " + "secondPrice: " + secondPrice);
+}
+
 function getAveragePrice(array) {
 	let averagePriceArray = array.map(function(itemField) {
 		let {id, name, firstPrice, secondPrice} = itemField;
@@ -42,8 +48,12 @@ function getAveragePrice(array) {
 };
 
 const averagePriceArray = getAveragePrice(infoCarsArray);
-console.log(infoCarsArray);
-console.log(averagePriceArray);
+
+console.log("Информация из обработанного массива согласно задания №2:");
+
+for (let {"id": id, "name": name, "averagePrice": averagePrice} of averagePriceArray) {
+	console.log("id: " + id + ', ' + "Name: " + name + ", " + "averagePrice: " + averagePrice);
+}
 
 
 /* задание 3: Реализовать функцию которая вернет массив с элементами в которых avaragePrice > 5000, элементы массива 
@@ -60,7 +70,13 @@ function getSortAveragePrice(array) {
 	return sortedAveragePrice;
 };
 
-console.log( getSortAveragePrice(averagePriceArray) );
+const sortedAveragePriseArray = getSortAveragePrice(averagePriceArray);
+
+console.log("Информация из отсортированного массива согласно задания №3:");
+
+for (let {"id": id, "name": name, "averagePrice": averagePrice} of sortedAveragePriseArray) {
+	console.log("id: " + id + ', ' + "Name: " + name + ", " + "averagePrice: " + averagePrice);
+}
 
 
 /* задание 4: 
