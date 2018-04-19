@@ -136,11 +136,11 @@ let generalObj = {
 };
 const {requestId} = generalObj;
 const {result:[{accountNumber}]} = generalObj;
-const {result:[{balance: {balance, otb}}]} = generalObj;
+const {result:[{balance: {otb}}]} = generalObj;
 const {result:[{cards: [{ucid}]}]} = generalObj;
 const {result:[{cards: [{expireDate}]}]} = generalObj;
 const {result:[{cards: [{expireDate: {year}}]}]} = generalObj;
 const {result:[{overdraftInfo: {lastCloseDayOverBalance}}]} = generalObj;
 const {result:[{bank: {id}}]} = generalObj;
 
-console.log(requestId, accountNumber, balance, otb, ucid, expireDate, year, lastCloseDayOverBalance, id);
+console.log(requestId, accountNumber, otb, ucid, expireDate, year, lastCloseDayOverBalance, id);
