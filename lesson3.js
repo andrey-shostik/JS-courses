@@ -2,9 +2,9 @@
 
 const array = [ 1, 2, 3, 4, 5 ];
 
-function getSums(arr1) {
+function getSums(arr) {
   let result = [];
-  array.reduce(function (previous,current) {
+  arr.reduce(function (previous,current) {
     result.push(previous + current);
     return previous + current;
   }, 0)
