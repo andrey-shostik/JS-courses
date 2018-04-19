@@ -53,7 +53,7 @@ console.log(arrayWithAvaragePrice);
 //#3
 const getSortedArray = array => {
     let newArray = [];
-    newArray = array.filter(({avaragePrice},item) => item > 5000)
+    newArray = array.filter(({avaragePrice}) => avaragePrice > 5000)
     .sort(function (a, b) {
         if (a.avaragePrice > b.avaragePrice) {
             return 1;
