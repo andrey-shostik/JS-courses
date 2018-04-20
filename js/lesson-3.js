@@ -86,7 +86,7 @@ function getPartialSumArray(arr) {
 
     if (!arr.length) return result;
 
-    let totalSum = arr.reduce((sum, item) => {
+    const totalSum = arr.reduce((sum, item) => {
         result.push(sum);
 
         return sum + item;
@@ -98,7 +98,7 @@ function getPartialSumArray(arr) {
 
 // 2
 
-function getJsonData(data) {
+function processingJsonData(data) {
     const carPrices = JSON.parse(data);
 
     return carPrices.map(({id, name, firstPrice, secondPrice}) =>
@@ -108,7 +108,7 @@ function getJsonData(data) {
 // 3
 
 function getFilteredArrayByAveragePrice(data, minAveragePrice) {
-    const carPrices = getJsonData(data);
+    const carPrices = processingJsonData(data);
 
     return carPrices.filter(({averagePrice}) => averagePrice > minAveragePrice)
         .sort((x, y) => x.averagePrice - y.averagePrice);
@@ -119,14 +119,14 @@ function getFilteredArrayByAveragePrice(data, minAveragePrice) {
 function destructProperties(data) {
     const properties = JSON.parse(data);
 
-    let {requestId} = properties;
-    let {result: [{accountNumber}]} = properties;
-    let {result: [{balance: {otb}}]} = properties;
-    let {result: [{cards: [{ucid}]}]} = properties;
+    const {requestId} = properties;
+    const {result: [{accountNumber}]} = properties;
+    const {result: [{balance: {otb}}]} = properties;
+    const {result: [{cards: [{ucid}]}]} = properties;
     const {result: [{cards: [{expireDate}]}]} = properties;
-    let {result: [{cards: [{expireDate: {year}}]}]} = properties;
-    let {result: [{overdraftInfo: {lastCloseDayOverBalance}}]} = properties;
-    let {result: [{bank: {id}}]} = properties;
+    const {result: [{cards: [{expireDate: {year}}]}]} = properties;
+    const {result: [{overdraftInfo: {lastCloseDayOverBalance}}]} = properties;
+    const {result: [{bank: {id}}]} = properties;
 
     console.log(requestId);
     console.log(accountNumber);
@@ -149,7 +149,7 @@ console.log(getPartialSumArray(arrOfCondition));
 console.groupEnd('Задача №1:');
 
 console.group('Задача №2:');
-console.log(getJsonData(dataOnCarPrices));
+console.log(processingJsonData(dataOnCarPrices));
 console.groupEnd('Задача №2:');
 
 console.group('Задача №3:');
