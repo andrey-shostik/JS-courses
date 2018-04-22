@@ -6,16 +6,12 @@
 * Массив брать из вызова функции задания 2.
 */
 
-let getArrayFilteredByPrice = arr => {
-	let arrFiltered = arr.filter(item => {	
-		return item.averagePrice > 5000;
-		});
-	
-	return arrFiltered.sort(compareNumeric);
+const getArrayFilteredByPrice = arr => {
+    return arr.filter(item => item.averagePrice > 5000).sort(compareNumeric);
 }
-	
-let compareNumeric = (a, b) => {
-  return a.averagePrice - b.averagePrice;
+
+const compareNumeric = (a, b) => {
+    return a.averagePrice - b.averagePrice;
 }
 
 const arrayCarsAveragePrice = getArrayAveragePrice(arrayCars);

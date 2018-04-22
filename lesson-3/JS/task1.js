@@ -5,15 +5,15 @@
 * [1,2,3,4,5] => [1, 3, 6, 10, 15]
 */
 
-let getArrayOfPartialSums = arr => {
-let result = [];
+const getArrayOfPartialSums = arr => {
+    let result = [];
 
-let sum = arr.reduce((total, amount) => {
-	result.push(total + amount);
-	return total + amount;
-}, 0);
+    const sum = arr.reduce((total, amount) => {
+        result.push(total + amount);
+        return total + amount;
+    }, 0);
 
-return result;
+    return result;
 }
 
 const array = [1, 2, 3, 4, 5];
