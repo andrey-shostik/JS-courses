@@ -1,6 +1,6 @@
 const arr = [1,2,3,4,5];
 
-function getArrayPartSum(arr) {
+function getArrayPartSum1(arr) {
     let ArrayPartSum = [];
     let value = 0;
     arr.forEach((i)=> {
@@ -9,7 +9,18 @@ function getArrayPartSum(arr) {
     });
     return  ArrayPartSum;
 }
-console.log(` ArrayPartSum ${getArrayPartSum(arr)}`);
+console.log(` ArrayPartSum ${getArrayPartSum1(arr)}`);
+
+function getArrayPartSum2(arr) {
+    const newArr = [];
+    const sumElement = arr.reduce(function (previous, current) {
+        newArr.push(previous);
+        return (previous + current);
+    });
+    newArr.push(sumElement);
+    return newArr;
+}
+console.log(` ArrayPartSum ${getArrayPartSum2(arr)}`);
 
 const price =[
     {"id":1,"name":"Sprinter 2500","firstPrice":8172,"secondPrice":9273},
