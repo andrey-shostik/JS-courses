@@ -47,10 +47,13 @@ console.log(addAveragePrice(price));
 
 const newPrice = addAveragePrice(price);
 
+
+
 function getSortArrAveragePrice(arr) {
-   return arr.filter( function({ averagePrice }) {
-                return averagePrice > 5000;
-            }).sort((x, y) => x.averagePrice - y.averagePrice);
+   return arr.filter(({ averagePrice }) =>
+                averagePrice > 5000
+            ).sort(function(x, y){
+                return x.averagePrice - y.averagePrice});
 }
 //console.log(`averagePrice > 5000: \n ${JSON.stringify(getSortArrAveragePrice(newPrice), null, '\t')}`);
 console.log(getSortArrAveragePrice(newPrice));
