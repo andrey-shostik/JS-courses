@@ -34,8 +34,10 @@ function addAveragePrice(json) {
     });
 return updatePrice;
 }
-//console.log(` add averagePrice ${addAveragePrice(price)}`);
-console.log(addAveragePrice(price));
+
+
+console.log(`add averagePrice : \n ${JSON.stringify(addAveragePrice(price), null, '\t' )}`);
+
 
 const newPrice = addAveragePrice(price);
 
@@ -45,8 +47,8 @@ function getSortArrAveragePrice(arr) {
             }).sort((x, y) => x.averagePrice - y.averagePrice);
 }
 
-//console.log(` averagePrice > 5000 ${getSortArrAveragePrice(newPrice)}`);
-console.log(getSortArrAveragePrice(newPrice));
+console.log(`averagePrice > 5000: \n ${JSON.stringify(getSortArrAveragePrice(newPrice), null, '\t')}`);
+
 
 const json = {
     "requestId" : "eed3fc9d337261ea23f0",
@@ -120,4 +122,11 @@ const {result:[{cards: [{expireDate: {year}}]}]} = json;
 const {result:[{overdraftInfo: {lastCloseDayOverBalance}}]} = json;
 const {result:[{bank: {id}}]} = json;
 
-console.log(requestId, accountNumber, otb, ucid, expireDate, year, lastCloseDayOverBalance, id);
+console.log(` requestId: ${requestId}
+    result.accountNumber:${accountNumber}
+    result.balance.otb: ${otb}
+    result.cards.ucid: ${ucid}
+    result.cards.expireDate: ${JSON.stringify(expireDate)}
+    result.cards.expireDate.year: ${year} 
+    result.overdraftInfo.lastCloseDayOverBalance: ${lastCloseDayOverBalance}
+    result.bank.id: ${id}` );
