@@ -6,17 +6,17 @@ function getArrayPartSumElements(arr) {
     const newArrPartSumElements = [];
 
     const sumAllElements = arr.reduce(function (previousValue, currentValue) {
-
         newArrPartSumElements.push(previousValue);
         return (previousValue + currentValue);
-
     });
+
     newArrPartSumElements.push(sumAllElements);
-
     return newArrPartSumElements;
-}
+    }
 
-console.log(getArrayPartSumElements(arrInitialData));
+    console.log(getArrayPartSumElements(arrInitialData));
+
+
 
 //Task-2.Реализовать функцию которая вернет новый массив, элементы которого должны быть объектами и иметь поля id, name и avaragePrice - среднее арифметическое от суммы firstPrice и secondPrice.
 
@@ -33,39 +33,28 @@ const arrBrandCar = [
     {"id":10,"name":"Insight","firstPrice":9030,"secondPrice":9207}
 ];
 
-let resultArrayWithAveragePrice = [];
 
-function getNewArr(arr) {
+function getNewArrWithAveragePrice(arr) {
 
-    resultArrayWithAveragePrice = arr.map(function (item) {
+    return arr.map(function (item) {
         const {id, name, firstPrice,secondPrice} = item;
         const averagePrice = ((firstPrice + secondPrice) / 2);
 
         return {id, name, averagePrice};
     });
-
-    return resultArrayWithAveragePrice;
 }
 
-
-console.log(getNewArr(arrBrandCar));
+const resultArrayWithAveragePrice = getNewArrWithAveragePrice(arrBrandCar);
+console.log(getNewArrWithAveragePrice(arrBrandCar));
 
 
 //Task-3.Реализовать функцию которая вернет массив с элементами в которых avaragePrice > 5000, элементы массива должны быть отсортированны по полю avaragePrice, по возростанию. Массив брать из вызова функции задания 2.
 
 
 function getArraySortedAveragePrice(arr) {
-    let resultSortedArray = [];
 
-    resultSortedArray = arr.filter(function ({averagePrice}) {
-        return averagePrice > 5000;
-    }).sort(sortArrayByIncrement);
-
-    return resultSortedArray;
-}
-
-function sortArrayByIncrement(a, b) {
-    return a.averagePrice - b.averagePrice;
+    return arr.filter(({averagePrice}) => averagePrice > 5000)
+        .sort((a,b) => a.averagePrice - b.averagePrice);
 }
 
 console.log(getArraySortedAveragePrice(resultArrayWithAveragePrice));
