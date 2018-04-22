@@ -9,7 +9,7 @@ function getArrayPartSum1(arr) {
     });
     return  ArrayPartSum;
 }
-console.log(` ArrayPartSum ${getArrayPartSum1(arr)}`);
+console.log(` ArrayPartSum ${getArrayPartSum1(arr)}`); //// time: 2 ms
 
 function getArrayPartSum2(arr) {
     const newArr = [];
@@ -20,7 +20,7 @@ function getArrayPartSum2(arr) {
     newArr.push(sumElement);
     return newArr;
 }
-console.log(` ArrayPartSum ${getArrayPartSum2(arr)}`);
+console.log(` ArrayPartSum ${getArrayPartSum2(arr)}`); // time: 1 ms
 
 const price =[
     {"id":1,"name":"Sprinter 2500","firstPrice":8172,"secondPrice":9273},
@@ -48,7 +48,7 @@ console.log(addAveragePrice(price));
 const newPrice = addAveragePrice(price);
 
 function getSortArrAveragePrice(arr) {
-   return arr.filter( ({ averagePrice }) => {
+   return arr.filter( function({ averagePrice }) {
                 return averagePrice > 5000;
             }).sort((x, y) => x.averagePrice - y.averagePrice);
 }
