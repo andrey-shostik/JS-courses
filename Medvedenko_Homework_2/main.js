@@ -1,11 +1,9 @@
-//[1,2,3,4,5] => [1, 3, 6, 10, 15]
-
 const arr = [1,2,3,4,5];
 
 function getArrayPartSum(arr) {
     let ArrayPartSum = [];
     let value = 0;
-    arr.forEach(function (i) {
+    arr.forEach((i)=> {
         value = value + i;
         ArrayPartSum.push(value)
     });
@@ -27,28 +25,24 @@ const price =[
 ];
 
 function addAveragePrice(json) {
-    let updatePrice = json.map(function (element) {
+    return json.map((element) => {
         const { id, name, firstPrice, secondPrice } = element;
         const averagePrice = ((firstPrice + secondPrice) / 2);
-        return {id, name, averagePrice};
+        return { id, name, averagePrice };
     });
-return updatePrice;
 }
-
-
-console.log(`add averagePrice : \n ${JSON.stringify(addAveragePrice(price), null, '\t' )}`);
-
+//console.log(`add averagePrice : \n ${JSON.stringify(addAveragePrice(price), null, '\t' )}`);
+console.log(addAveragePrice(price));
 
 const newPrice = addAveragePrice(price);
 
 function getSortArrAveragePrice(arr) {
-   return arr.filter(function ({averagePrice}) {
+   return arr.filter( ({ averagePrice }) => {
                 return averagePrice > 5000;
             }).sort((x, y) => x.averagePrice - y.averagePrice);
 }
-
-console.log(`averagePrice > 5000: \n ${JSON.stringify(getSortArrAveragePrice(newPrice), null, '\t')}`);
-
+//console.log(`averagePrice > 5000: \n ${JSON.stringify(getSortArrAveragePrice(newPrice), null, '\t')}`);
+console.log(getSortArrAveragePrice(newPrice));
 
 const json = {
     "requestId" : "eed3fc9d337261ea23f0",
