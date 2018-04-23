@@ -4,13 +4,14 @@ const specifiedNumbersArray = [3, 12, 4, 1, 156, 42, 17];
 
 function getPartialSumArray(array) {
   const result = [];
-    if (!array.length) 
-    return result;
+    if (!array.length) {
+      return result;
+    };
 	
-  let totalSum = array.reduce(function(sum, item) {
+  let totalSum = array.reduce( function(sum, item) {
     result.push(sum);
     return sum + item;
-});
+} );
 	
 result.push(totalSum);
 return result;
