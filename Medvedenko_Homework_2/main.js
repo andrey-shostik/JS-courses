@@ -22,6 +22,15 @@ function getArrayPartSum2(arr) {
 }
 console.log(` ArrayPartSum ${getArrayPartSum2(arr)}`); // time: 1 ms
 
+function getArrayPartSum3(arr) {
+        return arr.map(function(item, index, arr) {
+           return arr.slice(0, index + 1)
+            .reduce(function(previousValue, currentValue){
+                return previousValue + currentValue
+            })});
+}
+console.log(` ArrayPartSum ${getArrayPartSum3(arr)}`);
+
 const price =[
     {"id":1,"name":"Sprinter 2500","firstPrice":8172,"secondPrice":9273},
     {"id":2,"name":"Touareg","firstPrice":5856,"secondPrice":5130},
