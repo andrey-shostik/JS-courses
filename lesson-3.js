@@ -43,11 +43,11 @@ for (let {"id": id, "name": name, "firstPrice": firstPrice, "secondPrice": secon
 }
 
 function getAveragePrice(array) {
-  let averagePriceArray = array.map(function(itemField) {
+  let averagePriceArray = array.map( function(itemField) {
     let {id, name, firstPrice, secondPrice} = itemField;
     let averagePrice = (firstPrice + secondPrice) / 2;
     return {id, name, averagePrice};
-  });
+  } );
 
   return averagePriceArray;
 };
@@ -66,13 +66,13 @@ for (let {"id": id, "name": name, "averagePrice": averagePrice} of averagePriceA
    нужно использовать методы filter и sort. */
 
 function getSortAveragePrice(array) {
-  let filteredAveragePrice = array.filter(function(item) {
+  let filteredAveragePrice = array.filter( function(item) {
     return item.averagePrice > 5000;
-  });
+  } );
 	
-  let sortedAveragePrice = filteredAveragePrice.sort(function(firstValue, secondValue) {
+  let sortedAveragePrice = filteredAveragePrice.sort( function(firstValue, secondValue) {
     return firstValue.averagePrice - secondValue.averagePrice;
-  });
+  } );
 	
   return sortedAveragePrice;
 };
