@@ -2,19 +2,13 @@
 
 const arrInitialData = [1, 2, 3, 4, 5];
 
-function getArrayPartSumElements(arr) {
-    const newArrPartSumElements = [];
+function getPartSum(arr) {
+    return arr.map((item, index, arr) => arr.slice(0, index + 1)
+        .reduce((previousValue, currentValue) => previousValue + currentValue));
+}
 
-    const sumAllElements = arr.reduce(function (previousValue, currentValue) {
-        newArrPartSumElements.push(previousValue);
-        return (previousValue + currentValue);
-    });
+console.log(getPartSum(arrInitialData));
 
-    newArrPartSumElements.push(sumAllElements);
-    return newArrPartSumElements;
-    }
-
-    console.log(getArrayPartSumElements(arrInitialData));
 
 
 
