@@ -82,18 +82,9 @@ const dataSet = `{
 // 1
 
 function getPartialSumArray(arr) {
-    const result = [];
 
-    if (!arr.length) return result;
-
-    const totalSum = arr.reduce((sum, item) => {
-        result.push(sum);
-
-        return sum + item;
-    });
-    result.push(totalSum);
-
-    return result;
+    return arr.map((item, index) => arr.slice(0, index + 1)
+        .reduce((previousValue, currentValue) => previousValue + currentValue));
 }
 
 // 2
