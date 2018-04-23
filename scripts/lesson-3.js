@@ -6,7 +6,7 @@ console.log(" ");
 let arr = [1, 2, 3, 4, 5];
 
 function getPartSum(arr) {
-    let totalArr = [];
+    const totalArr = [];
 
     let totalSum = arr.reduce(function (previousValue, currentItem) {
         totalArr.push(previousValue);
@@ -31,7 +31,7 @@ console.log(" ");
 
 function getArrAvaragePrice(arr) {
     let totalArr = [];
-    arr.map(function (item, i, arr) {
+    arr.map((item, i, arr) => {
         totalArr.push((item.firstPrice + item.secondPrice) / 2);
         item.avaragePrice = totalArr[i];
         return arr
@@ -53,16 +53,14 @@ console.log(" ");
 
 
 function getSortArrAvaragePrice(arr) {
-    let filterArrOnAvarage = arr.filter(function (item, i) {
+    let filterArrOnAvarage = arr.filter((item, i) => {
         return item.avaragePrice > 5000
 
-    });
-
-    let sortFilterArrOnAvarage = filterArrOnAvarage.sort(function (a, b) {
+    }).sort(function (a, b) {
         return a.avaragePrice - b.avaragePrice
     });
 
-    return sortFilterArrOnAvarage
+    return filterArrOnAvarage
 }
 
 console.log(getSortArrAvaragePrice(getArrAvaragePrice(dataPriceCar)));
