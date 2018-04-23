@@ -8,8 +8,7 @@
 */
 
 const getArrayAveragePrice = arr => {
-    return arr.map(item => {
-        const {id, name, firstPrice, secondPrice} = item;
+    return arr.map( ( {id, name, firstPrice, secondPrice} ) => {
         let averagePrice = (firstPrice + secondPrice) / 2;
         return {id, name, averagePrice};
     });
