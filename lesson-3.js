@@ -1,16 +1,19 @@
 // задание 1: Реализовать функцию которая возвращает массив его частичных сумм c помощью reduce // [1,2,3,4,5] => [1, 3, 6, 10, 15]
 
-const specifiedNumbersArray = [3,12,4,1,156,42,17];
+const specifiedNumbersArray = [3, 12, 4, 1, 156, 42, 17];
 
 function getPartialSumArray(array) {
-	let result = [];
-		if (!array.length) return result;
-	let totalSum = array.reduce(function(sum, item) {
+  const result = [];
+    if (!array.length) 
+    return result;
+	
+  let totalSum = array.reduce(function(sum, item) {
     result.push(sum);
     return sum + item;
-  });
-  result.push(totalSum);
-  return result;
+});
+	
+result.push(totalSum);
+return result;
 };
 
 console.log( getPartialSumArray(specifiedNumbersArray) );
@@ -35,16 +38,17 @@ const infoCarsArray = [
 console.log("Информация из исходного массива:");
 
 for (let {"id": id, "name": name, "firstPrice": firstPrice, "secondPrice": secondPrice} of infoCarsArray) {
-	console.log("id: " + id + ', ' + "Name: " + name + ", " + "firstPrice: " + firstPrice + ", " + "secondPrice: " + secondPrice);
+  console.log("id: " + id + ', ' + "Name: " + name + ", " + "firstPrice: " + firstPrice + ", " + "secondPrice: " + secondPrice);
 }
 
 function getAveragePrice(array) {
-	let averagePriceArray = array.map(function(itemField) {
-		let {id, name, firstPrice, secondPrice} = itemField;
-		let averagePrice = (firstPrice + secondPrice)/2;
-		return {id, name, averagePrice};
-	});
-	return averagePriceArray;
+  let averagePriceArray = array.map(function(itemField) {
+    let {id, name, firstPrice, secondPrice} = itemField;
+    let averagePrice = (firstPrice + secondPrice) / 2;
+    return {id, name, averagePrice};
+  });
+
+  return averagePriceArray;
 };
 
 const averagePriceArray = getAveragePrice(infoCarsArray);
@@ -52,7 +56,7 @@ const averagePriceArray = getAveragePrice(infoCarsArray);
 console.log("Информация из обработанного массива согласно задания №2:");
 
 for (let {"id": id, "name": name, "averagePrice": averagePrice} of averagePriceArray) {
-	console.log("id: " + id + ', ' + "Name: " + name + ", " + "averagePrice: " + averagePrice);
+  console.log("id: " + id + ', ' + "Name: " + name + ", " + "averagePrice: " + averagePrice);
 }
 
 
@@ -61,13 +65,15 @@ for (let {"id": id, "name": name, "averagePrice": averagePrice} of averagePriceA
    нужно использовать методы filter и sort. */
 
 function getSortAveragePrice(array) {
-	let filteredAveragePrice = array.filter(function(item) {
-		return item.averagePrice > 5000;
-    });
-	let sortedAveragePrice = filteredAveragePrice.sort(function(firstValue, secondValue) {
-		return firstValue.averagePrice - secondValue.averagePrice;
-    });
-	return sortedAveragePrice;
+  let filteredAveragePrice = array.filter(function(item) {
+    return item.averagePrice > 5000;
+  });
+	
+  let sortedAveragePrice = filteredAveragePrice.sort(function(firstValue, secondValue) {
+    return firstValue.averagePrice - secondValue.averagePrice;
+  });
+	
+  return sortedAveragePrice;
 };
 
 const sortedAveragePriseArray = getSortAveragePrice(averagePriceArray);
@@ -75,7 +81,7 @@ const sortedAveragePriseArray = getSortAveragePrice(averagePriceArray);
 console.log("Информация из отсортированного массива согласно задания №3:");
 
 for (let {"id": id, "name": name, "averagePrice": averagePrice} of sortedAveragePriseArray) {
-	console.log("id: " + id + ', ' + "Name: " + name + ", " + "averagePrice: " + averagePrice);
+  console.log("id: " + id + ', ' + "Name: " + name + ", " + "averagePrice: " + averagePrice);
 }
 
 
