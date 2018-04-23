@@ -4,7 +4,9 @@
 
 ##  JS
 [Что такое ООП](https://habrahabr.ru/post/148015/)
+
 [ООП в функциональном стиле](https://learn.javascript.ru/oop)
+
 [ООП в прототимном стиле](https://learn.javascript.ru/prototypes)
 
 ## JS задачи
