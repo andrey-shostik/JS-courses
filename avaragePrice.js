@@ -1,5 +1,5 @@
 function getFilteredCars(car) {
-    let filteredCars = car.filter(function(currentCar) {
+    const filteredCars = car.filter( (currentCar) => {
         return currentCar.avaragePrice > 5000;
     }).sort(function(a, b) {
         return a.avaragePrice - b.avaragePrice;
@@ -21,14 +21,9 @@ const carsPrices = [
     {"id":10,"name":"Insight","firstPrice":9030,"secondPrice":9207}
 ];
 
-let carsAvaragePrices = carsPrices.map( function(car) {
-    let newCar = {
-        id: car.id,
-        name: car.name,
-        avaragePrice: (car.firstPrice + car.secondPrice) / 2
-    };
-
-    return newCar;
+const carsAvaragePrices = carsPrices.map( (car) => {
+    const {firstPrice, secondPrice} = car;
+    return {id: car.d, name: car.name, avaragePrice: (firstPrice + secondPrice) / 2};
 });
 
 console.log(carsAvaragePrices);
