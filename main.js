@@ -3,10 +3,10 @@
 const arry = [1, 2, 3, 4, 5];
 
 function getSums(arr) {
-    let result = [];
+    const result = [];
     if (!arr.length) return result;
 
-    let totalSum = arr.reduce(function (sum, item) {
+    let totalSum = arr.reduce((sum, item) =>  {
         result.push(sum);
         return sum + item;
     });
@@ -31,7 +31,7 @@ const arryCars = [
     {"id":10,"name":"Insight","firstPrice":9030,"secondPrice":9207}];
 
 function avaregePrice(arr) {
-    return arr.map(function ({id, name, firstPrice, secondPrice}) {
+    return arr.map(({id, name, firstPrice, secondPrice}) =>  {
         let avaragePrice = (firstPrice + secondPrice) / 2;
         return {id, name, avaragePrice}
     })
@@ -41,11 +41,11 @@ console.log(avaregePrice(arryCars));
 // Задача 3
 
 function arryFilterSort(arr) {
-        let filterAvaragePrice = arr.filter(function (a) {
-        return a.avaragePrice > 5000
+    let filterAvaragePrice = arr.filter((index) =>  {
+    return index.avaragePrice > 5000
     });
 
-    let sortUP = filterAvaragePrice.sort(function (a, b) {
+    let sortUP = filterAvaragePrice.sort((a, b) =>  {
         return a.avaragePrice - b.avaragePrice
     });
     return sortUP
