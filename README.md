@@ -11,6 +11,10 @@
 
 [ООП из MDN](https://developer.mozilla.org/ru/docs/Learn/JavaScript/%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D1%8B/Object-oriented_JS)
 
+[Дескрипторы, геттеры и сеттеры свойств](https://learn.javascript.ru/descriptors-getters-setters)
+
+[Статические и фабричные методы](https://learn.javascript.ru/static-properties-and-methods)
+
 ## JS задачи
 1. Реализуйте класс Worker (Работник), который будет иметь следующие свойства: name (имя), surname (фамилия), rate (ставка за день работы), days (количество отработанных дней). Также класс должен иметь метод getSalary(), который будет выводить зарплату работника. Зарплата - это произведение (умножение) ставки rate на количество отработанных дней days. Реализовать на ES5 функциях-конструкторах и на ES6 class.
 ```
