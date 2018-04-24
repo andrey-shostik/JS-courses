@@ -39,7 +39,7 @@ const infoCarsArray = [
 console.log("Информация из исходного массива:");
 
 function getSourseArrayData() {
-  for (let {"id": id, "name": name, "firstPrice": firstPrice, "secondPrice": secondPrice} of infoCarsArray) {
+  for (const {"id": id, "name": name, "firstPrice": firstPrice, "secondPrice": secondPrice} of infoCarsArray) {
     console.log("id: " + id + ', ' + "Name: " + name + ", " + "firstPrice: " + firstPrice + ", " + "secondPrice: " + secondPrice);
   };
 };
@@ -47,13 +47,11 @@ function getSourseArrayData() {
 getSourseArrayData();
 
 function getAveragePrice(array) {
-  let averagePriceArray = array.map( function(itemField) {
-    let {id, name, firstPrice, secondPrice} = itemField;
-    let averagePrice = (firstPrice + secondPrice) / 2;
+  return array.map( function(itemField) {
+    const {id, name, firstPrice, secondPrice} = itemField;
+    const averagePrice = (firstPrice + secondPrice) / 2;
     return {id, name, averagePrice};
   } );
-
-  return averagePriceArray;
 };
 
 const averagePriceArray = getAveragePrice(infoCarsArray);
@@ -61,7 +59,7 @@ const averagePriceArray = getAveragePrice(infoCarsArray);
 console.log("Информация из обработанного массива согласно задания №2:");
 
 function getProcessedArrayData() {
-  for (let {"id": id, "name": name, "averagePrice": averagePrice} of averagePriceArray) {
+  for (const {"id": id, "name": name, "averagePrice": averagePrice} of averagePriceArray) {
     console.log("id: " + id + ', ' + "Name: " + name + ", " + "averagePrice: " + averagePrice);
   };
 };
@@ -74,14 +72,9 @@ getProcessedArrayData();
    нужно использовать методы filter и sort. */
 
 function getSortAveragePrice(array) {
-  let filteredAveragePrice = array.filter( function(item) {
-    return item.averagePrice > 5000;
-  } );
-	
-  let sortedAveragePrice = filteredAveragePrice.sort( function(firstValue, secondValue) {
-    return firstValue.averagePrice - secondValue.averagePrice;
-  } );
-	
+  const filteredAveragePrice = array.filter(item => (item.averagePrice > 5000) );
+  const sortedAveragePrice = filteredAveragePrice.sort( (firstValue, secondValue) => 
+  (firstValue.averagePrice - secondValue.averagePrice) );
   return sortedAveragePrice;
 };
 
@@ -90,7 +83,7 @@ const sortedAveragePriseArray = getSortAveragePrice(averagePriceArray);
 console.log("Информация из отсортированного массива согласно задания №3:");
 
 function getSortedArrayData() {
-  for (let {"id": id, "name": name, "averagePrice": averagePrice} of sortedAveragePriseArray) {
+  for (const {"id": id, "name": name, "averagePrice": averagePrice} of sortedAveragePriseArray) {
     console.log("id: " + id + ', ' + "Name: " + name + ", " + "averagePrice: " + averagePrice);
   };
 };
