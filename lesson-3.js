@@ -38,9 +38,13 @@ const infoCarsArray = [
 
 console.log("Информация из исходного массива:");
 
-for (let {"id": id, "name": name, "firstPrice": firstPrice, "secondPrice": secondPrice} of infoCarsArray) {
-  console.log("id: " + id + ', ' + "Name: " + name + ", " + "firstPrice: " + firstPrice + ", " + "secondPrice: " + secondPrice);
-}
+function getSourseArrayData() {
+  for (let {"id": id, "name": name, "firstPrice": firstPrice, "secondPrice": secondPrice} of infoCarsArray) {
+    console.log("id: " + id + ', ' + "Name: " + name + ", " + "firstPrice: " + firstPrice + ", " + "secondPrice: " + secondPrice);
+  };
+};
+
+getSourseArrayData();
 
 function getAveragePrice(array) {
   let averagePriceArray = array.map( function(itemField) {
@@ -56,9 +60,13 @@ const averagePriceArray = getAveragePrice(infoCarsArray);
 
 console.log("Информация из обработанного массива согласно задания №2:");
 
-for (let {"id": id, "name": name, "averagePrice": averagePrice} of averagePriceArray) {
-  console.log("id: " + id + ', ' + "Name: " + name + ", " + "averagePrice: " + averagePrice);
-}
+function getProcessedArrayData() {
+  for (let {"id": id, "name": name, "averagePrice": averagePrice} of averagePriceArray) {
+    console.log("id: " + id + ', ' + "Name: " + name + ", " + "averagePrice: " + averagePrice);
+  };
+};
+
+getProcessedArrayData();
 
 
 /* задание 3: Реализовать функцию которая вернет массив с элементами в которых avaragePrice > 5000, элементы массива 
@@ -81,9 +89,13 @@ const sortedAveragePriseArray = getSortAveragePrice(averagePriceArray);
 
 console.log("Информация из отсортированного массива согласно задания №3:");
 
-for (let {"id": id, "name": name, "averagePrice": averagePrice} of sortedAveragePriseArray) {
-  console.log("id: " + id + ', ' + "Name: " + name + ", " + "averagePrice: " + averagePrice);
-}
+function getSortedArrayData() {
+  for (let {"id": id, "name": name, "averagePrice": averagePrice} of sortedAveragePriseArray) {
+    console.log("id: " + id + ', ' + "Name: " + name + ", " + "averagePrice: " + averagePrice);
+  };
+};
+
+getSortedArrayData();
 
 
 /* задание 4: 
