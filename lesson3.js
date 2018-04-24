@@ -51,7 +51,7 @@ function getFilteredArray(arr) {
 console.log(getFilteredArray(arrayWithAvaragePrices));
 ///////////////// #4 \\\\\\\\\\\\\\\\
 
-let informationAboutUser = {
+const informationAboutUser = {
   "requestId" : "eed3fc9d337261ea23f0",
   "result" : [ {
     "accountNumber" : "40802810800000018334",
