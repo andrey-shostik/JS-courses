@@ -3,17 +3,14 @@
 const array = [ 1, 2, 3, 4, 5 ];
 
 function getSums(arr) {
-  let result = [];
-  arr.reduce(function (previous,current) {
-    result.push(previous + current);
-    return previous + current;
-  }, 0)
-  return result;
+  return arr.map(function(item, index, arr) {
+    return arr.slice(0, index + 1)
+      .reduce(function(previous, current){
+        return previous + current;
+    })
+  })
 }
-
-  console.log(getSums(array));
-
-
+console.log(getSums(array));
 ///////////////// #2 \\\\\\\\\\\\\\\\
 
 const infoCarsArray = [
@@ -30,31 +27,28 @@ const infoCarsArray = [
 ];
 
 function getArrayWithAvaragePrices(array){
-  let arrayWithAvaragePrices = [];
-  arrayWithAvaragePrices = array.map(function (options) {
-    let {id,name,firstPrice,secondPrice} = options;
-    let avaragePrice = (firstPrice + secondPrice) / 2;
-    return {id,name,avaragePrice};
+  return array.map(function (options) {
+    const {id,name,firstPrice,secondPrice} = options;
+    const avaragePrice = (firstPrice + secondPrice) / 2;
+    return {
+      id,
+      name,
+      avaragePrice
+    };
   })
-  return arrayWithAvaragePrices;
 }
+
+const arrayWithAvaragePrices = getArrayWithAvaragePrices(infoCarsArray);
 console.log(getArrayWithAvaragePrices(infoCarsArray));
 
 ///////////////// #3 \\\\\\\\\\\\\\\\
 
-function getFiltered(arr) {
-  let positiveArray = arr.filter(function (item) {
-    return item.avaragePrice > 5000;
-  })
-  let sorted = positiveArray.sort(function (a,b) {
-    return a.avaragePrice - b.avaragePrice;
-  })
-  return sorted;
+function getFilteredArray(arr) {
+    return arr.filter(({avaragePrice}) => avaragePrice > 5000)
+        .sort((a,b) => a.avaragePrice - b.avaragePrice);
 }
-const filters = getArrayWithAvaragePrices(infoCarsArray);
-console.log(getFiltered(filters));
 
-
+console.log(getFilteredArray(arrayWithAvaragePrices));
 ///////////////// #4 \\\\\\\\\\\\\\\\
 
 let informationAboutUser = {
@@ -119,6 +113,7 @@ let informationAboutUser = {
   } ],
   "success" : true
 }
+
 
 const {requestId} = informationAboutUser;
 const {result: [ {accountNumber} ] } = informationAboutUser;
