@@ -70,10 +70,8 @@ getProcessedArrayData();
    нужно использовать методы filter и sort. */
 
 const getSortAveragePrice = array => {
-  const filteredAveragePrice = array.filter(item => (item.averagePrice > 5000) );
-  const sortedAveragePrice = filteredAveragePrice.sort( (firstValue, secondValue) => 
+  return array.filter( item => (item.averagePrice > 5000) ).sort( (firstValue, secondValue) => 
   (firstValue.averagePrice - secondValue.averagePrice) );
-  return sortedAveragePrice;
 };
 
 const sortedAveragePriceArray = getSortAveragePrice(averagePriceArray);
