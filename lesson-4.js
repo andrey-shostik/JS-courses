@@ -49,25 +49,27 @@ function Worker ( name, surname, rate, days ) {
   this._days = days;
 };
 
-Worker.prototype.getName = function () {
-  return this._name;
-};
+Worker.prototype = {
+  getName : function () {
+    return this._name;
+  },
 
-Worker.prototype.getSurname = function () {
-  return this._surname;
-};
+  getSurname : function () {
+    return this._surname;
+  },
 
-Worker.prototype.getRate = function () {
-  return this._rate;
-};
+  getRate : function () {
+    return this._rate;
+  },
 
-Worker.prototype.getDays = function () {
-  return this._days;
-};
+  getDays : function () {
+    return this._days;
+  },
 
-Worker.prototype.getSalary = function() {
-  const salary = this._rate * this._days
-  return salary;
+  getSalary : function () {
+    const salary = this._rate * this._days
+    return salary;
+  }
 };
 
 var worker = new Worker('Иван', 'Иванов', 10, 31);
