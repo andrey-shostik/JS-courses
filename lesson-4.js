@@ -16,9 +16,11 @@ function Worker ( name, surname, rate, days ) {
   this.surname = surname;
   this.rate = rate;
   this.days = days;
-  this.getSalary = function() {
-    var salary = this.rate * this.days
-  };
+};
+
+Worker.prototype.getSalary = function() {
+  const salary = this.rate * this.days
+  return salary;
 };
 
 var worker = new Worker('Иван', 'Иванов', 10, 31);
