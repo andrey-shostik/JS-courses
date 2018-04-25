@@ -53,19 +53,15 @@ Worker.prototype = {
   getName : function () {
     return this._name;
   },
-
   getSurname : function () {
     return this._surname;
   },
-
   getRate : function () {
     return this._rate;
   },
-
   getDays : function () {
     return this._days;
   },
-
   getSalary : function () {
     const salary = this._rate * this._days
     return salary;
