@@ -5,18 +5,16 @@
 const generalArray = [1, 2, 3, 4, 5, 6, 8, 17, -2];
 
 const getSums = (array) => {
-    const newArray = [];
-    if (!array.length) {
-        return newArray;
-    }
-    const totalAmount = array.reduce(function (sum, item) {
-        newArray.push(sum);
-        return sum + item;
-    });
-    newArray.push(totalAmount);
-    return newArray;
+   return array.map((item, index, array) => {
+       return array.slice(0, index + 1)
+       .reduce((prev, next) => {
+           return prev + next;
+       });
+   });
 };
 console.log(getSums(generalArray));
+
+
 
 //
 //
@@ -37,13 +35,11 @@ const infoCarsArray = [
 ];
 
 const getArrayOfObjs = (array) => {
-    let arrayWithAvaragePrice = [];
-    arrayWithAvaragePrice = array.map(function (item) {
-        let {firstPrice, secondPrice, id, name} = item;
-        let avaragePrice = (firstPrice + secondPrice) / 2;
+    return array.map((item) => {
+        const {firstPrice, secondPrice, id, name} = item;
+        const avaragePrice = (firstPrice + secondPrice) / 2;
         return {id, name, avaragePrice};
     });
-    return arrayWithAvaragePrice;
 };
 let arrayWithAvaragePrice = getArrayOfObjs(infoCarsArray);
 console.log(arrayWithAvaragePrice);
@@ -52,14 +48,10 @@ console.log(arrayWithAvaragePrice);
 //
 //#3
 const getSortedArray = array => {
-    let newArray = [];
-    newArray = array.filter(({avaragePrice}) => avaragePrice > 5000)
+    return array.filter(({avaragePrice}) => avaragePrice > 5000)
     .sort(function (a, b) {
-        if (a.avaragePrice > b.avaragePrice) {
-            return 1;
-        }
+        return a.avaragePrice - b.avaragePrice;
     });
-    return newArray;
 };
 
 let sortedArray = getSortedArray(arrayWithAvaragePrice);
