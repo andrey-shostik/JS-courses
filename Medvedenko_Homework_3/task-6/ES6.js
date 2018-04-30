@@ -10,9 +10,8 @@ class BaseValidator {
 BaseValidator.prototype.validate = function () {
 };
 
-
-
 class EmailValidator extends BaseValidator {
+
     validate(email) {
         const resultValidator = /[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/igm.test(String(email).toLowerCase());
         if (resultValidator) {
