@@ -18,37 +18,33 @@
 */
 
 function Worker(name, surname, rate, days) {
-  this._name = name;
-  this._surname = surname;
-  this._rate = rate;
-  this._days = days;
 
   this.getName = function() {
-    return this._name;
+    return name;
     };
 
   this.getSurname = function() {
-    return this._surname;
+    return surname;
     };
 
   this.getRate = function() {
-    return this._rate;
+    return rate;
     };
 
   this.setRate = function(newRate) {
-    this._rate = newRate;
+    rate = newRate;
     };
 
   this.getDays = function() {
-    return this._days;
+    return days;
     };
 
   this.setDays = function(newDays) {
-    this._days = newDays;
+    days = newDays;
     };
 
   this.getSalary = function() {
-    return this._rate * this._days;
+    return rate * days;
     };
 }
 
