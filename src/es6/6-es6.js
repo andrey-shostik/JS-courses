@@ -12,50 +12,34 @@ class BaseValidator extends Validator {
         this.cache = {};
     }
 
-    getCachedValue() {
-        return this.cache;
+    getCachedValue(value) {
+        return this.cache[value];
     };
 }
 
-BaseValidator.prototype.validate = () => {};
+BaseValidator.prototype.validate = function () {};
 
 class EmailValidator extends BaseValidator {
     validate(email) {
-        if (super.isEmail(email)) {
-            this.cache.email = email;
-
-            return true;
-        }
+        return (email in this.cache) ? super.getCachedValue(email) : (this.cache[email] = this.isEmail(email));
     }
 }
 
 class DomainValidator extends BaseValidator {
     validate(domain) {
-        if (super.isDomain(domain)) {
-            this.cache.domain = domain;
-
-            return true;
-        }
+        return (domain in this.cache) ? super.getCachedValue(domain) : (this.cache[domain] = super.isDomain(domain));
     }
 }
 
 class DateValidator extends BaseValidator {
     validate(date) {
-        if (super.isDate(date)) {
-            this.cache.date = date;
-
-            return true;
-        }
+        return (date in this.cache) ? super.getCachedValue(date) : (this.cache[date] = super.isDate(date));
     }
 }
 
 class PhoneValidator extends BaseValidator {
     validate(phone) {
-        if (super.isPhone(phone)) {
-            this.cache.phone = phone;
-
-            return true;
-        }
+        return (phone in this.cache) ? super.getCachedValue(phone) : (this.cache[phone] = super.isPhone(phone));
     }
 }
 
@@ -63,7 +47,6 @@ const emailValidator = new EmailValidator();
 const domainValidator = new DomainValidator();
 const dateValidator = new DateValidator();
 const phoneValidator = new PhoneValidator();
-const baseValidator = new BaseValidator();
 
 console.group('6');
 console.log(emailValidator.validate('phphtml@mail.ru'));
@@ -72,6 +55,3 @@ console.log(dateValidator.validate('12.05.2020'));
 console.log(phoneValidator.validate('+375 (29) 817-68-92')); //тут можете формат своей страны
 console.groupEnd('6');
 
-console.group('6.1');
-console.log(emailValidator.getCachedValue('phphtml@mail.ru'));
-console.groupEnd('6.1');
