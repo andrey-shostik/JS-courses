@@ -30,7 +30,7 @@ function sortArray2(myArray) { //Сортировка массива пузыр�
 }
 
 
-let myArray = [1, 3, 2, 'fsdf', 0, -5];
+let myArray = [1,10,9,5,13,-1];
 
 console.log(sortArray1(myArray));
 console.log(sortArray2(myArray));
