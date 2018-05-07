@@ -1,0 +1,5 @@
+/.idea/
+*.json
+/node_modules/
+/index_dist.html
+/dist/
