@@ -36,8 +36,7 @@ Worker.prototype = {
         this._days = days;
     },
     getSalary: function () {
-        const salary = this._rate * this._days
-        return salary;
+        return this._rate * this._days
     }
 };
 
