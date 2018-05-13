@@ -32,8 +32,7 @@ class Worker {
     }
 
     getSalary() {
-        const salary = this._rate * this._days
-        return salary;
+        return this._rate * this._days
     }
 };
 
