@@ -18,8 +18,7 @@ class Worker {
     }
 
     getSalary() {
-        const salary = this.rate * this.days
-        return salary;
+        return this.rate * this.days
     }
 };
 
