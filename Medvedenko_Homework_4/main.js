@@ -7,41 +7,43 @@
 };
 (sum(1)(2)(3))*/
 
-const getSum = x => y => z => x + y + z;
+const getSum = arg1 => arg2 => arg3 => arg1 + arg2 + arg3;
 console.log(getSum(1)(2)(3));
 
 
-function sum(a) {
-    f.currentSum = a;
+function sum(arg) {
+    funcSum.currentSumArg = arg;
 
-    function f(b) {
-        f.currentSum += b;
-        return f;
+    function funcSum(nextArg) {
+        funcSum.currentSumArg += nextArg;
+        return funcSum;
     }
 
-    f.toString = function() {
-        return f.currentSum.toString();
+    funcSum.toString = function() {
+        return funcSum.currentSumArg.toString();
     };
-    return f
+    return funcSum
 }
+
+
 
 console.log(+sum(0)(2)(3)(5)(6)(7));
 
 
 // task 2.1
 
-function add(x) {
-    return function sum(y) {
-        if (typeof y !== 'undefined') {
-            x = x + y;
+function add(args) {
+    return function sum(nextArg) {
+        if (typeof nextArg !== 'undefined') {
+            args = args + nextArg;
             return sum
         } else {
-            return x;
+            return args;
         }
     };
 }
 
-console.log(add(1)(2)(3)());// logs 6
+console.log(add(1)(2)(3)());// 6
 
 
 //task - 3

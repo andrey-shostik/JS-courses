@@ -1,15 +1,15 @@
-function sum(a) {
-    f.currentSum = a;
+function sum(arg) {
+    funcSum.currentSumArg = arg;
 
-    function f(b) {
-        f.currentSum += b;
-        return f;
+    function funcSum(nextArg) {
+        funcSum.currentSumArg += nextArg;
+        return funcSum;
     }
 
-    f.toString = function() {
-        return f.currentSum.toString();
+    funcSum.toString = function() {
+        return funcSum.currentSumArg.toString();
     };
-    return f
+    return funcSum
 }
 
 
