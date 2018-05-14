@@ -50,9 +50,7 @@ console.log(add(1)(2)(3)());// 6
 
 function makeCounter () {
 
-    const  counter = () => {
-        return counter.currentCount++;
-    };
+    const  counter = () => counter.currentCount++;
     counter.currentCount = 1;
     counter.set = (num) => {
         counter.currentCount = num;
