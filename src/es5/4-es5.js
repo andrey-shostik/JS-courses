@@ -6,7 +6,6 @@ MyString.reverse = function (str) {
 };
 
 MyString.ucFirst = function (str) {
-
     return str.charAt(0).toUpperCase() + str.slice(1);
 };
 

@@ -9,7 +9,7 @@ class BaseValidator extends Validator {
     };
 }
 
-BaseValidator.prototype.validate = function () {};
+BaseValidator.prototype = Object.create(Validator.prototype);
 
 class EmailValidator extends BaseValidator {
     validate(email) {

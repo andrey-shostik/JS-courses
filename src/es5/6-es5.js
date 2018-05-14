@@ -8,7 +8,7 @@ function BaseValidator() {
     }
 }
 
-BaseValidator.prototype.validate = function () {};
+BaseValidator.prototype = Object.create(Validator.prototype);
 
 EmailValidator.prototype = new BaseValidator();
 
