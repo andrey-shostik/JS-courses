@@ -4,7 +4,9 @@ function sum(a){
     function add(b){
         if(b === undefined) {
             res;
-        } else {res +=b}
+        } else {
+            res +=b
+        }
         return add;
     }
     add.toString = function() {
