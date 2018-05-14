@@ -28,7 +28,7 @@ function makeCounter() {
     const counter = () => ++initialValue;
 
     counter.set = (value) => {
-        initialValue = value - 1;
+        initialValue = --value;
     };
 
     counter.reset = () => {
