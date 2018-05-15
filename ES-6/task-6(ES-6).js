@@ -1,73 +1,65 @@
 class BaseValidator {
     constructor() {
-        this.cacheBlock = {};
+        this.cacheBlock = [];
     }
 
-    getCachedValue(val) {
-        return this.cacheBlock[val]
+    getCachedValue() {
+        return this.cacheBlock[this.cacheBlock.length - 1];
     }
 }
 
-BaseValidator.prototype.validate = function () {
-
-};
-
-
+BaseValidator.prototype.validate = function () {};
 
 class EmailValidator extends BaseValidator {
-
     validate(email) {
-        if (this.getCachedValue(email) !== undefined) {
-            return this.cacheBlock[email]
-        } else {
-            const testValue = /^[-._a-z0-9]+@(?:[a-z0-9][-a-z0-9]+\.)+[a-z]{2,6}$/.test(email);
-            this.cacheBlock[email] = testValue;
-            return testValue;
+        const testValue = /^[-._a-z0-9]+@(?:[a-z0-9][-a-z0-9]+\.)+[a-z]{2,6}$/.test(email);
+
+        if (testValue) {
+            this.cacheBlock.push(email);
+            console.log(this.cacheBlock);
+            return this.getCachedValue();
         }
+        return `Не валідний емейл - ${email}`;
     }
 }
-
 
 class DomainValidator extends BaseValidator {
-
     validate(domain) {
-        if (this.getCachedValue(domain) !== undefined) {
-            return this.cacheBlock[domain]
-        } else {
-            const testValue = /\w+\.\w+/.test(domain);
-            this.cacheBlock[domain] = testValue;
-            return testValue;
+        const testValue = /\w+\.\w+/.test(domain);
+
+        if (testValue) {
+            this.cacheBlock.push(domain);
+            console.log(this.cacheBlock);
+            return this.getCachedValue();
         }
+        return `Не валідний домейн - ${domain}`;
     }
 }
-
 
 class DateValidator extends BaseValidator {
     validate(date) {
-        if (this.getCachedValue(date) !== undefined) {
-            return this.cacheBlock[date]
-        } else {
-            const testValue = /\d{2}\d{2}\d{4}/.test(date);
-            this.cacheBlock[date] = testValue;
-            return testValue;
+        const testValue = /\d{2}\d{2}\d{4}/.test(date);
+
+        if (testValue) {
+            this.cacheBlock.push(date);
+            return this.getCachedValue();
         }
+        return `Не валіднa дата - ${date}`;
     }
 }
-
 
 class PhoneValidator extends BaseValidator {
 
     validate(phone) {
-        if (this.getCachedValue(phone) !== undefined) {
-            return this.cacheBlock[phone]
-        } else {
-            const testValue = /[+]\d+\s/.test(phone);
-            this.cacheBlock[phone] = testValue;
-            return testValue;
+        const testValue = /[+]\d+\s/.test(phone);
+
+        if (testValue) {
+            this.cacheBlock.push(phone);
+            return this.getCachedValue();
         }
+        return `Не валідний телефон - ${phone}`;
     }
 }
-
 
 const emailValidator = new EmailValidator();
 const domainValidator = new DomainValidator();

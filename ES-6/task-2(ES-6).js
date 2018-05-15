@@ -1,7 +1,4 @@
 /* Task-2. Модифицируйте класс Worker из предыдущей задачи следующим образом: сделайте все его свойства приватными, а для их чтения сделайте методы-геттеры. Наш класс теперь будет работать так: */
-
-// ES-6..
-
 class Worker {
     constructor(name, surname, rate, days) {
         this._name = name;
@@ -29,7 +26,6 @@ class Worker {
     get getSalary() {
         return `Заробітня плата складає: ${this._rate * this._days} грн`;
     }
-
 }
 
 const worker = new Worker('Иван', 'Иванов', 10, 31);

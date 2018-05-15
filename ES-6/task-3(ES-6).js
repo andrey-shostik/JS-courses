@@ -1,7 +1,4 @@
 /* Task-3.Модифицируйте класс Worker из предыдущей задачи следующим образом: для свойства rate и для свойства days сделайте еще и методы-сеттеры. Наш класс теперь будет работать так: */
-
-//ES-6...
-
 class Worker {
     constructor(name, surname, rate, days) {
         this._name = name;
@@ -29,7 +26,6 @@ class Worker {
     set setDays(days) {
         return this._days = days;
     }
-
 }
 
 const worker = new Worker("Иван", "Иванов", 10, 31);
