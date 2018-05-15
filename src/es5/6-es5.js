@@ -1,14 +1,15 @@
-BaseValidator.prototype = new Validator();
+// BaseValidator.prototype = new Validator();
+BaseValidator.prototype = Object.create(Validator.prototype);
 
 function BaseValidator() {
     this.cache = {};
 
     this.getCachedValue = function (value) {
         return this.cache[value];
-    }
-}
+    };
 
-BaseValidator.prototype = Object.create(Validator.prototype);
+    this.validate = function () {};
+}
 
 EmailValidator.prototype = new BaseValidator();
 

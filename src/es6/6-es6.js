@@ -7,9 +7,10 @@ class BaseValidator extends Validator {
     getCachedValue(value) {
         return this.cache[value];
     };
-}
 
-BaseValidator.prototype = Object.create(Validator.prototype);
+    validate() {
+    };
+}
 
 class EmailValidator extends BaseValidator {
     validate(email) {

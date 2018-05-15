@@ -1,35 +1,34 @@
 function Worker(name, surname, rate, days) {
-    this._name = name;
-    this._surname = surname;
-    this._rate = rate;
-    this._days = days;
-
+    let _name = name;
+    let _surname = surname;
+    let _rate = rate;
+    let _days = days;
 
     this.getName = function () {
-        return this._name;
+        return _name;
     };
 
     this.getSurname = function () {
-        return this._surname;
+        return _surname;
     };
 
     this.getRate = function () {
-        return this._rate;
+        return _rate;
     };
 
     this.getDays = function () {
-        return this._days;
+        return _days;
     };
 
     this.getSalary = function () {
-        return this._rate * this._days;
+        return _rate * _days;
     };
 
     this.setRate = function (newRate) {
-        this._rate = newRate;
+        _rate = newRate;
     };
     this.setDays = function (newDays) {
-        this._days = newDays;
+        _days = newDays;
     };
 }
 
