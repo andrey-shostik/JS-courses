@@ -1,0 +1,25 @@
+.wraptable {
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.table {
+    border: 1px solid #000;
+}
+
+.td {
+    border: 1px solid #000;
+    width: 28px;
+    height: 28px;
+}
+
+.black {
+    border: 1px solid #000;
+    width: 28px;
+    height: 28px;
+    background: black;
+}
+
+#change-color {
+    margin-top: 15px;
+}
