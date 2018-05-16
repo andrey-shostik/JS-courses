@@ -1,11 +1,11 @@
 function getTr() {
     let tr = document.getElementById('input-tr');
-    return tr.value < 10 ? tr.value : alert('max value 10');
+    return tr.value <= 10 ? tr.value : alert('max value 10');
 }
 
 function getTd() {
     let td = document.getElementById('input-td');
-    return td.value < 10 ? td.value : alert('max value 10');
+    return td.value <= 10 ? td.value : alert('max value 10');
 }
 
 function createTr() {
