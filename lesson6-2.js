@@ -1,16 +1,16 @@
 //2
-function sum(a){
-    let res = a;
-    function add(b){
-        if(b === undefined) {
-            res;
+function sum(number){
+    let result = number;
+    function add(number){
+        if(number === undefined) {
+            result;
         } else {
-            res +=b
+            result += number
         }
         return add;
     }
     add.toString = function() {
-        return res;
+        return result;
     }
     return add;
 }

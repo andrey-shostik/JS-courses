@@ -1,9 +1,9 @@
 //1
-function sum(a) {
-    let tempSum = a;
+function sum(number) {
+    let tempSum = number;
 
-    function add(b) {
-        tempSum += b;
+    function add(number) {
+        tempSum += number;
         return add;
     }
     add.toString = function () {
