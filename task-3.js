@@ -10,15 +10,15 @@ counter.reset();
 counter() // 1
 */
 
-function makeCounter() {
+const makeCounter = () => {
   let currentCount = 1;
-  function counter() {
+  const counter = () => {
     return currentCount++;
   };
-  counter.set = function(value) {
+  counter.set = (value) => {
     currentCount = value;
   };
-  counter.reset = function() {
+  counter.reset = () => {
     currentCount = 1;
   };
   return counter;
