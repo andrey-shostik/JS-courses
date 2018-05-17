@@ -10,9 +10,9 @@ alert(sum(1)(2)(3)...(N))
 
 // Универсальное решение:
 
-function getSumArguments(value) {
+const getSumArguments = (value) => {
   let result = value;
-  function getSumArguments(nextValue) {
+  const getSumArguments = (nextValue) => {
     if (nextValue === undefined) {
       result;
     } else {
@@ -20,7 +20,7 @@ function getSumArguments(value) {
       };
     return getSumArguments;
   };
-  getSumArguments.toString = function() {
+  getSumArguments.toString = () => {
     return result;
   };
   return getSumArguments;
