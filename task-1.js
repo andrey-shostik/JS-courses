@@ -6,14 +6,12 @@ sum(1)(2)(3) === 6
 */
 
 
-const getSumArguments = (firstArg) => {
-  let sum = firstArg;
-  const func = (secondArg) => {
-    sum += secondArg;
-    return func;
-  };
-  func.valueOf = () => sum;
-return func;
-};
+function getSumArguments(value) {
+  getSumArguments.result = (getSumArguments.result) ? getSumArguments.result += value : value;
+  getSumArguments.valueOf = function() {
+    return getSumArguments.result;
+  }
+  return getSumArguments;
+}
 
 console.log( getSumArguments(1)(2)(3) );
