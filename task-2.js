@@ -17,7 +17,7 @@ function getSumArguments(value) {
       result;
     } else {
       result += nextValue
-      }
+      };
     return getSumArguments;
   };
   getSumArguments.toString = function() {
