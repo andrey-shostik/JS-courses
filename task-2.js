@@ -13,12 +13,9 @@ alert(sum(1)(2)(3)...(N))
 const getSumArguments = (value) => {
   let result = value;
   const getSumArguments = (nextValue) => {
-    if (nextValue === undefined) {
-      result;
-    } else {
+    if (nextValue)
       result += nextValue
-      };
-    return getSumArguments;
+      return getSumArguments;
   };
   getSumArguments.toString = () => {
     return result;
