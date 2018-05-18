@@ -1,45 +1,16 @@
 # JS-courses
-1. Прочитать статьи
-2. Сделать пулл реквест с выполненными заданиями
+1. Выполнить задания и сделать ПР
 
-##  JS
-[Замыкания, область видимости](https://learn.javascript.ru/functions-closures)
+## Read
 
-[Замыкания MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
+[Селекторы DOM элементов](https://learn.javascript.ru/searching-elements-internals)
 
-[Замыкания в JavaScript](https://htmlacademy.ru/blog/195-lets-learn-javascript-closures)
+[Навигация по DOM](https://learn.javascript.ru/traversing-dom)
 
-[Currying](https://www.sitepoint.com/currying-in-functional-javascript/)
+[Удаление и добавление элементов](https://learn.javascript.ru/modifying-document)
 
-## JS задачи
-1. Реализовать функцию, которая суммирует аргументы.
-```javascript
-function sum(x) {
-  ...
-}
+[Браузерные события](https://learn.javascript.ru/events-and-interfaces)
 
-sum(1)(2)(3) === 6
-```
+## DOM
 
-2. Реализовать функцию, которая суммирует аргументы, если аргумент не передан - вернуть сумму.
-```javascript
-function sum(x) {
-  ...
-}
-
-sum(1)(2)(3)...(N)() === сумме всех чисел до N
-```
-Реализовать эту же функцию, только с возможностью получения значения без дополнительного пустого вызова.
-```javascript
-alert(sum(1)(2)(3)...(N))
-```
-3. Реализовать счетчик который при вызове должен возвращать число на 1 больше, также иметь методы set и reset, работать это должно следующим образом.
-```javascript
-const counter = makeCounter();
-counter() // 1
-counter() // 2
-counter.set(12);
-counter() // 12
-counter.reset();
-counter() // 1
-```
+1. Нужно сделать поле из белых клеток (клетка может иметь размер около 28×28 пикселей). При клике на клетку она должна менять цвет на черный. Под таблицей должна быть кнопка «поменять цвета». При ее нажатии все цвета клеток меняются на противоположные. Делать поле удобно с помощью элемента <table>. Саму таблицу надо не вставить в исходный код, а сгенерировать и добавить в DOM страницы яваскриптом. Также надо сделать возможность что бы можно было вводить количество строк и столбцов.
