@@ -45,8 +45,3 @@ function applyColor(value) {
 }
 
 renderTable();
-
-
-
-
-
