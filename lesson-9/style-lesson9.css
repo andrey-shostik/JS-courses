@@ -1,0 +1,22 @@
+td{
+    border: 1px solid black;
+   /* background: black;*/
+    width: 28px;
+    height: 28px;
+}
+tr{
+    border: 1px solid black;
+}
+table{
+    border: 1px solid black;
+    margin: 5px;
+}
+tr{
+    border: 1px solid black;
+}
+input{
+    margin: 5px;
+}
+button{
+    margin: 5px;
+}
