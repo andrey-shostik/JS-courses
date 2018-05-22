@@ -1,4 +1,3 @@
-// BaseValidator.prototype = new Validator();
 BaseValidator.prototype = Object.create(Validator.prototype);
 
 function BaseValidator() {
@@ -8,36 +7,44 @@ function BaseValidator() {
         return this.cache[value];
     };
 
-    this.validate = function () {};
+    this.validate = function () {}
 }
 
-EmailValidator.prototype = new BaseValidator();
+EmailValidator.prototype = Object.create(BaseValidator.prototype);
 
 function EmailValidator() {
+    BaseValidator.apply(this, arguments);
+
     this.validate = function (email) {
         return (email in this.cache) ? this.getCachedValue(email) : (this.cache[email] = this.isEmail(email));
     }
 }
 
-DomainValidator.prototype = new BaseValidator();
+DomainValidator.prototype = Object.create(BaseValidator.prototype);
 
 function DomainValidator() {
+    BaseValidator.apply(this, arguments);
+
     this.validate = function (domain) {
         return (domain in this.cache) ? this.getCachedValue(domain) : (this.cache[domain] = this.isDomain(domain));
     }
 }
 
-DateValidator.prototype = new BaseValidator();
+DateValidator.prototype = Object.create(BaseValidator.prototype);
 
 function DateValidator() {
+    BaseValidator.apply(this, arguments);
+
     this.validate = function (date) {
         return (date in this.cache) ? this.getCachedValue(date) : (this.cache[date] = this.isDate(date));
     }
 }
 
-PhoneValidator.prototype = new BaseValidator();
+PhoneValidator.prototype = Object.create(BaseValidator.prototype);
 
 function PhoneValidator() {
+    BaseValidator.apply(this, arguments);
+
     this.validate = function (phone) {
         return (phone in this.cache) ? this.getCachedValue(phone) : (this.cache[phone] = this.isPhone(phone));
     }
