@@ -3,11 +3,9 @@
 2. Сделать пулл реквест с выполненными заданиями
 
 ##  Read
-[Методы для перебора массивов](https://learn.javascript.ru/array-iteration)
+[Промисы](https://learn.javascript.ru/promise)
 
-Пересмотреть [Методы массива](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array)
-
-[Деструктуризация](https://learn.javascript.ru/destructuring)
+[Fetch](https://learn.javascript.ru/fetch)
 
 
 ## Tasks
