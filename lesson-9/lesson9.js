@@ -49,11 +49,7 @@ function createTable() {
     }
 
     mainTable.addEventListener('click', e => {
-        if (e.target.style.backgroundColor === 'black') {
-            e.target.style.backgroundColor = 'white';
-        } else {
-            e.target.style.backgroundColor = 'black';
-        }
+        (e.target.style.backgroundColor === 'black') ? e.target.style.backgroundColor = 'white' : e.target.style.backgroundColor = 'black';
     });
 
     inversionButton.addEventListener('click', () => {
