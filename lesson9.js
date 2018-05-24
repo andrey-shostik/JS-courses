@@ -46,13 +46,14 @@ function createTable() {
     document.body.appendChild(myTable);
     myTable.onclick = function (event) {
         const target = event.target;
-        while (target != myTable) {
-            if (target.tagName == 'TD') {
+        while (target !== myTable) {
+            if (target.tagName === 'TD') {
                 if (target.style.backgroundColor === 'rgb(255, 255, 255)') {
                     target.style.backgroundColor = '#000000';
                 } else {
                     target.style.backgroundColor = '#FFFFFF';
                 }
+                
                 return;
             }
             this.target = target.parentNode;
