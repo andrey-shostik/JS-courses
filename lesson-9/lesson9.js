@@ -20,7 +20,7 @@ tableCreateBlock.appendChild(buttonCreateTable);
 
 buttonCreateTable.addEventListener('click', () => createTable());
 
-function createTable() {
+ createTable = () => {
     const mainTable = document.createElement('table');
     tableBlock.appendChild(mainTable);
 
@@ -28,13 +28,13 @@ function createTable() {
     inversionButton.innerHTML = 'Змінити кольори';
     tableBlock.appendChild(inversionButton);
 
-    function createTd() {
+    createTd = () => {
         const td = document.createElement('td');
 
         return td;
     }
 
-    function createTr() {
+    createTr = () => {
         const tr = document.createElement('tr');
 
         return tr;
