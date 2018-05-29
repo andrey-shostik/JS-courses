@@ -29,7 +29,7 @@ function renderTable(rows, column) {
     const buttonForChangeColor = document.createElement('button');
     document.body.appendChild(buttonForChangeColor);
     buttonForChangeColor.innerHTML = 'Change color';
-    buttonForChangeColor.style.margin = '10px 0 10px 0';
+    buttonForChangeColor.style.margin = '10px 0';
 
 
     for (let i = 0; i < rows; i++) {
