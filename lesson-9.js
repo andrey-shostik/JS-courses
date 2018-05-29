@@ -1,20 +1,20 @@
 const getTableData = () => {
-    const containerForInput = document.createElement('div');
-    document.body.appendChild(containerForInput);
+    const inputDiv = document.createElement('div');
+    document.body.appendChild(inputDiv);
 
-    const trInputValue = document.createElement('input');
-    trInputValue.placeholder = 'Введите кол-во срок...';
-    containerForInput.appendChild(trInputValue);
+    const inputTr = document.createElement('input');
+    inputTr.placeholder = 'Введите кол-во срок...';
+    inputDiv.appendChild(inputTr);
 
-    const tdInputValue = document.createElement('input');
-    tdInputValue.placeholder = 'Введите кол-во столбцов...';
-    containerForInput.appendChild(tdInputValue);
+    const inputTd = document.createElement('input');
+    inputTd.placeholder = 'Введите кол-во столбцов...';
+    inputDiv.appendChild(inputTd);
 
     const buttonCreateTable = document.createElement('button');
-    containerForInput.appendChild(buttonCreateTable);
+    inputDiv.appendChild(buttonCreateTable);
     buttonCreateTable.innerHTML = 'Сгенерировать таблицу';
 
-    buttonCreateTable.addEventListener('click', () => getTable(trInputValue.value, tdInputValue.value));
+    buttonCreateTable.addEventListener('click', () => getTable(inputTr.value, inputTd.value));
 }
 
 getTableData();
