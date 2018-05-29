@@ -10,7 +10,7 @@ const fetch = require('node-fetch');
 const url = 'http://www.json-generator.com/api/json/get/cfQCylRjuG';
 const urlUsers = 'http://www.json-generator.com/api/json/get/cfVGucaXPC';
 
-/*(function getUserDataProm(url, urlUsers) {
+(function getUserDataProm(url, urlUsers) {
     fetch(url, {method: 'GET'})
         .then(res => res.json())
         .then(json => {
@@ -21,7 +21,8 @@ const urlUsers = 'http://www.json-generator.com/api/json/get/cfVGucaXPC';
                     .then(json => console.log(json))
                     .catch(e => console.log(e))
             }
-        });
+        })
+        .catch(e => console.log(e));
 })(url, urlUsers);
 
 const getUserDataAsync = async (url, urlUsers) => {
@@ -35,7 +36,7 @@ const getUserDataAsync = async (url, urlUsers) => {
     }
 };
 
-getUserDataAsync(url, urlUsers);*/
+getUserDataAsync(url, urlUsers);
 
 const urls = [
         'http://www.json-generator.com/api/json/get/cevhxOsZnS',
@@ -44,18 +45,21 @@ const urls = [
         'http://www.json-generator.com/api/json/get/cfkrfOjrfS',
         'http://www.json-generator.com/api/json/get/ceQMMKpidK'
 ];
-
-
-function getJsons(urls) {
-    let result = [];
-    for (let i = 0; i < urls.length; i++){
-        fetch(urls[i], {method : 'GET'})
-            .then(res => res.json())
-            .then(json => result.push(json))
-            //.then(json => console.log(json))
-            .catch(e => console.log(e))
+const reqConsistently = async (urls) => {
+    const result = [];
+    try {
+        for (let i = 0; i < urls.length; i++) {
+            result.push(await (await fetch(urls[i], {method: 'GET'})).json())
+        }
+    } catch (e) {
+        console.log(e)
     }
+    console.log(result)
+};
+reqConsistently(urls);
 
-    return result
-}
-console.log(getJsons(urls));
+const reqParallel = urls => Promise.all(urls.map((url) => {
+    fetch(url, {method : 'GET'}).then(req => req.json()).then(json => console.log(json));
+}));
+reqParallel(urls);
+
