@@ -19,7 +19,7 @@ const getTableData = () => {
 
 getTableData();
 
-const getTable = (rows, column) => {
+const getTable = (row, column) => {
     const table = document.createElement('table');
     document.body.appendChild(table);
 
@@ -27,7 +27,7 @@ const getTable = (rows, column) => {
     document.body.appendChild(changeColorButton);
     changeColorButton.innerHTML = 'Изменить цвет';
 
-    for (let i = 0; i < rows; i++) {
+    for (let i = 0; i < row; i++) {
         const tr = table.insertRow();
         for ( let j = 0; j < column; j++ ) {
             const td = tr.insertCell();
