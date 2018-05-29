@@ -3,7 +3,6 @@ function delay(ms) {
         setTimeout(resolve, ms);
     });
 }
-
 delay(100).then(() => console.log("Hello!"));
 
 const fetch = require('node-fetch');
@@ -35,7 +34,6 @@ const getUserDataAsync = async (url, urlUsers) => {
         console.log(e)
     }
 };
-
 getUserDataAsync(url, urlUsers);
 
 const urls = [
@@ -59,7 +57,7 @@ const reqConsistently = async (urls) => {
 reqConsistently(urls);
 
 const reqParallel = urls => Promise.all(urls.map((url) => {
-    fetch(url, {method : 'GET'}).then(req => req.json()).then(json => console.log(json));
+    fetch(url, {method : 'GET'}).then(res => res.json()).then(json => console.log(json));
 }));
 reqParallel(urls);
 
