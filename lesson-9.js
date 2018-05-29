@@ -15,7 +15,7 @@ const getTableData = () => {
     buttonCreateTable.innerHTML = 'Сгенерировать таблицу';
 
     buttonCreateTable.addEventListener('click', () => getTable(inputTr.value, inputTd.value));
-}
+};
 
 getTableData();
 
@@ -29,24 +29,24 @@ const getTable = (rows, column) => {
 
     for (let i = 0; i < rows; i++) {
         const tr = table.insertRow();
-        for (let j = 0; j < column; j++) {
+        for ( let j = 0; j < column; j++ ) {
             const td = tr.insertCell();
-        }
-    }
+        };
+    };
 
-    table.addEventListener('click', e => {
-        if (e.target.tagName === 'TD') changeColor(e.target);
-    });
+    table.addEventListener( 'click', e => {
+        if ( e.target.tagName === 'TD' ) changeColor(e.target);
+    } );
 
-    changeColorButton.addEventListener('click', () => {
+    changeColorButton.addEventListener( 'click', () => {
         const arrayTd = table.getElementsByTagName('td');
 
-        for(let i = 0; i < arrayTd.length; i++) {
-            changeColor(arrayTd[i]);
-        }
+        for ( let i = 0; i < arrayTd.length; i++ ) {
+            changeColor( arrayTd[i] );
+        };
     });
-}
+};
 
 const changeColor = (value) => {
     value.style.backgroundColor === 'black' ? value.style.background = 'white' : value.style.background = 'black';
-}
+};
