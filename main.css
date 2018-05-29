@@ -1,0 +1,14 @@
+input {
+    margin: 5px 5px 10px 0;
+}
+
+button {
+    margin: 5px 5px 0 0;
+}
+
+td {
+    border: 1px solid red;
+    width: 28px;
+    height: 28px;
+    background: white;
+}
